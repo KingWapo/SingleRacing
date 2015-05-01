@@ -20,7 +20,9 @@ public abstract class Racer : MonoBehaviour {
 	
 	// Update is called once per frame
 	protected virtual void Update () {
-        DoMovement();
+        if (GameManager.GetState() == GameManager.State.Racing) {
+            DoMovement();
+        }
 	}
 
     protected void UpdateMovement(float turnAxis, float acclAxis) {
