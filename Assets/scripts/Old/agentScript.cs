@@ -32,7 +32,7 @@ public class agentScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
-        print(target);
+        //print(target);
      
         if (target == 1)
         {

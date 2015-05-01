@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Racer : MonoBehaviour {
+public abstract class Racer : MonoBehaviour {
 
     public float speed = 30f;
 
@@ -14,13 +14,13 @@ public class Racer : MonoBehaviour {
     private float maxReverseVelocity = -4f;
 
 	// Use this for initialization
-	void Start () {
+	protected virtual void Start () {
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	protected virtual void Update () {
+        DoMovement();
 	}
 
     protected void UpdateMovement(float turnAxis, float acclAxis) {
@@ -54,4 +54,6 @@ public class Racer : MonoBehaviour {
     protected float GetLean() {
         return lean;
     }
+
+    protected abstract void DoMovement();
 }

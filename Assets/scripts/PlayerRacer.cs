@@ -3,19 +3,19 @@ using System.Collections;
 
 public class PlayerRacer : Racer {
 
-    public Camera camera;
+    public new Camera camera;
 
 	// Use this for initialization
-	void Start () {
-	
+	protected override void Start () {
+        base.Start();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        DoMovement();
+	protected override void Update () {
+        base.Update();
 	}
 
-    protected void DoMovement() {
+    protected override void DoMovement() {
         float turnAxis = Input.GetAxis("360_LeftThumbstick");
         float acclAxis = Input.GetAxis("360_Triggers");
 

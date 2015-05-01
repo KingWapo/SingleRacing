@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class winnerScript : MonoBehaviour {
 
     Text text;
-    public GameObject player;
+    //public GameObject player;
     public GameObject enemy001;
     public GameObject enemy002;
     public GameObject enemy003;
@@ -18,7 +18,7 @@ public class winnerScript : MonoBehaviour {
 	void Start () {
         text = GetComponent<Text>();
         text.enabled = false;
-        player.GetComponent<agentScript>().enabled = false;
+        //player.GetComponent<agentScript>().enabled = false;
         var = 1;
 	}
 	
@@ -26,7 +26,7 @@ public class winnerScript : MonoBehaviour {
 	void Update () {
       //  print(agentScript.enemyWinner);
 
-        print(enemyLap.lap);
+        //print(enemyLap.lap);
         if (var == 1)
         {
             if (playerLap.lap == 4)
