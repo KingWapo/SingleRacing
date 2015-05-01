@@ -13,6 +13,10 @@ public class PlayerRacer : Racer {
 	// Update is called once per frame
 	protected override void Update () {
         base.Update();
+
+        if (Input.GetKeyUp(KeyCode.Keypad1)) {
+            FinishRace();
+        }
 	}
 
     protected override void DoMovement() {
@@ -25,5 +29,12 @@ public class PlayerRacer : Racer {
         UpdateMovement(turnAxis, acclAxis);
 
         camera.transform.localRotation = Quaternion.Euler(new Vector3(15f, 0f, -GetLean()));
+    }
+
+    protected override void FinishRace() {
+        base.FinishRace();
+
+        gameObject.AddComponent<AIRacer>();
+        enabled = false;
     }
 }

@@ -3,7 +3,9 @@ using System.Collections;
 
 public abstract class Racer : MonoBehaviour {
 
+    // racer movement
     public float speed = 30f;
+    public float acceleration = 100f;
 
     private float rotation = 300f;
     private float lean = 0f;
@@ -55,6 +57,10 @@ public abstract class Racer : MonoBehaviour {
 
     protected float GetLean() {
         return lean;
+    }
+
+    protected virtual void FinishRace() {
+        // do stuff
     }
 
     protected abstract void DoMovement();

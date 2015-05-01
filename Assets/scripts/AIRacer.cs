@@ -14,6 +14,8 @@ public class AIRacer : Racer {
 
         trackManager = FindObjectOfType<TrackManager>();
         navAgent = GetComponent<NavMeshAgent>();
+        navAgent.speed = speed;
+        navAgent.acceleration = acceleration;
 	}
 	
 	// Update is called once per frame

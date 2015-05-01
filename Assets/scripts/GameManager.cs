@@ -3,6 +3,8 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
+    private RacerInfo[] racers;
+
     public enum State {
         PreRace, Racing, PostRace
     };
@@ -12,12 +14,19 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         state = State.PreRace;
+
+        racers = FindObjectsOfType<RacerInfo>();
+        UpdatePosition();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyUp(KeyCode.Space)) {
+        if (Input.GetKeyUp(KeyCode.Keypad0)) {
             SetState(State.Racing);
+        }
+
+        if (state == State.Racing) {
+            UpdatePosition();
         }
 	}
 
@@ -27,5 +36,13 @@ public class GameManager : MonoBehaviour {
 
     public static State GetState() {
         return state;
+    }
+
+    private void UpdatePosition() {
+        if (racers.Length > 0) {
+            for (int i = 0; i < racers.Length; i++) {
+                // logic for determining position
+            }
+        }
     }
 }
