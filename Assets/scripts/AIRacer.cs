@@ -23,7 +23,7 @@ public class AIRacer : Racer {
 
     protected override void DoMovement() {
         Debug.Log("ASDF: " + Vector3.Distance(navAgent.destination, navAgent.transform.position));
-        if (Vector3.Distance(navAgent.destination, navAgent.transform.position) < 1.0f) {
+        if (Vector3.Distance(navAgent.destination, navAgent.transform.position) < 5.0f) {
             Debug.Log("New destination");
 
             waypointIndex++;
