@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class countDownScript : MonoBehaviour {
 
     public float countDown = 1;
-    public GameObject player;
+    //public GameObject player;
     public GameObject enemy001;
     public GameObject enemy002;
     public GameObject enemy003;
@@ -27,7 +27,7 @@ public class countDownScript : MonoBehaviour {
 	void Update () {
         if(Time.time <=1)
         {
-            player.GetComponent<xboxController>().enabled = false;
+            //player.GetComponent<xboxController>().enabled = false;
             enemy001.GetComponent<agentScript>().enabled = false;
             enemy002.GetComponent<agentScript>().enabled = false;
             enemy003.GetComponent<agentScript>().enabled = false;
@@ -60,7 +60,7 @@ public class countDownScript : MonoBehaviour {
             enemy003.GetComponent<agentScript>().target = 2;
             enemy004.GetComponent<agentScript>().target = 2;
             enemy005.GetComponent<agentScript>().target = 2;
-            player.GetComponent<xboxController>().enabled = true;
+            //player.GetComponent<xboxController>().enabled = true;
             enemy001.GetComponent<agentScript>().enabled = true;
             enemy002.GetComponent<agentScript>().enabled = true;
             enemy003.GetComponent<agentScript>().enabled = true;

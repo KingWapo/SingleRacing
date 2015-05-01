@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerRacer : Racer {
 
-    Camera camera;
+    public Camera camera;
 
 	// Use this for initialization
 	void Start () {
