@@ -15,7 +15,12 @@ public class PlayerRacer : Racer {
         base.Update();
 
         if (Input.GetKeyUp(KeyCode.Keypad1)) {
+            Debug.Log("FINISHING RACE");
             FinishRace();
+        }
+
+        if (Input.GetKey(KeyCode.Space) || Input.GetButton("360_ButtonA")) {
+            Shoot();
         }
 	}
 

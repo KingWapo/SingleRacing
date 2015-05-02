@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyUp(KeyCode.Keypad0)) {
+            Debug.Log("STARTING RACE");
             SetState(State.Racing);
         }
 

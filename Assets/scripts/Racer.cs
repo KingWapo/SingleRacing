@@ -15,6 +15,20 @@ public abstract class Racer : MonoBehaviour {
     private float maxForwardVelocity = 50f;
     private float maxReverseVelocity = -4f;
 
+    // racer shooting
+    public GameObject projectile;
+    public GameObject leftGun;
+    public GameObject rightGun;
+
+    private int barrelIndex = 0;
+
+    private float spreadAngle = 1f;
+
+    private float cooldown = 0f;
+    private float maxCooldown = 1f;
+
+    private int spreadLevel = 0;
+
 	// Use this for initialization
 	protected virtual void Start () {
 	
@@ -24,6 +38,16 @@ public abstract class Racer : MonoBehaviour {
 	protected virtual void Update () {
         if (GameManager.GetState() == GameManager.State.Racing) {
             DoMovement();
+        }
+
+        if (cooldown > 0) {
+            cooldown -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Keypad2)) {
+            Debug.Log("INCREASING SPREAD: " + (spreadLevel + 1));
+            spreadLevel++;
+            spreadLevel = Mathf.Clamp(spreadLevel, 0, 5);
         }
 	}
 
@@ -57,6 +81,65 @@ public abstract class Racer : MonoBehaviour {
 
     protected float GetLean() {
         return lean;
+    }
+
+    protected void Shoot() {
+        if (cooldown <= 0) {
+            Vector3 origin;
+
+            if (barrelIndex == 0) {
+                origin = leftGun.transform.position;
+            } else {
+                origin = rightGun.transform.position;
+            }
+
+            switch (spreadLevel) {
+                case 5:
+                    GameObject proj7 = ProduceProjectile(origin);
+                    proj7.transform.Rotate(transform.up, spreadAngle);
+                    proj7.transform.Rotate(transform.forward, -spreadAngle);
+                    GameObject proj8 = ProduceProjectile(origin);
+                    proj8.transform.Rotate(transform.up, -spreadAngle);
+                    proj8.transform.Rotate(transform.forward, spreadAngle);
+                    goto case 4;
+                case 4:
+                    GameObject proj5 = ProduceProjectile(origin);
+                    proj5.transform.Rotate(transform.up, spreadAngle);
+                    proj5.transform.Rotate(transform.forward, spreadAngle);
+                    GameObject proj6 = ProduceProjectile(origin);
+                    proj6.transform.Rotate(transform.up, -spreadAngle);
+                    proj6.transform.Rotate(transform.forward, -spreadAngle);
+                    goto case 3;
+                case 3:
+                    GameObject proj3 = ProduceProjectile(origin);
+                    proj3.transform.Rotate(transform.forward, spreadAngle);
+                    GameObject proj4 = ProduceProjectile(origin);
+                    proj4.transform.Rotate(transform.forward, -spreadAngle);
+                    goto case 2;
+                case 2:
+                    GameObject proj1 = ProduceProjectile(origin);
+                    proj1.transform.Rotate(transform.up, spreadAngle);
+                    GameObject proj2 = ProduceProjectile(origin);
+                    proj2.transform.Rotate(transform.up, -spreadAngle);
+                    goto case 1;
+                case 1:
+                    ProduceProjectile(origin);
+                    break;
+            }
+
+            cooldown = maxCooldown;
+            barrelIndex = (barrelIndex + 1) % 2;
+        }
+    }
+
+    protected GameObject ProduceProjectile(Vector3 origin) {
+        GameObject shot = (GameObject)Instantiate(projectile);
+        shot.transform.position = origin;
+        shot.transform.LookAt(origin - new Vector3(5f, 0, 0));
+        shot.GetComponent<Projectile>().SetSpeed(1f);
+        shot.GetComponent<Projectile>().owner = gameObject;
+
+        return shot;
     }
 
     protected virtual void FinishRace() {

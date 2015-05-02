@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 690a2c6c7c0e6a5438ba5f54078cc51e
-timeCreated: 1430524170
+guid: e46b5cd4467b3fc4d9fa343f8218dd95
+timeCreated: 1430524483
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences:
-  - projectile: {instanceID: 0}
-  - leftGun: {instanceID: 0}
-  - rightGun: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
