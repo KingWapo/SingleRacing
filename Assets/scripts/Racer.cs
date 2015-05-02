@@ -31,7 +31,7 @@ public abstract class Racer : MonoBehaviour {
     public bool weaponsEnabled = false;
 
     // racer info
-    private RacerInfo racerInfo;
+    protected RacerInfo racerInfo;
 
 	// Use this for initialization
     protected virtual void Start() {

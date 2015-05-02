@@ -21,7 +21,7 @@ public class RacerInfo : MonoBehaviour {
 
     // racer health
     private float health;
-    private float maxHealth = 1f;
+    public static float maxHealth = 1f;
 
     private bool respawning = false;
 
@@ -90,11 +90,17 @@ public class RacerInfo : MonoBehaviour {
     }
 
     public void TakeDamage(float amount) {
-        health -= amount;
+        if (health > 0 && !respawning) {
+            health -= amount;
 
-        if (health < 0) {
-            StartCoroutine(Respawn());
+            if (health < 0) {
+                StartCoroutine(Respawn());
+            }
         }
+    }
+
+    public float GetHealth() {
+        return health;
     }
 
     private IEnumerator Respawn() {
