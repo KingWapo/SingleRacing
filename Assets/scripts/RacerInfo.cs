@@ -26,7 +26,9 @@ public class RacerInfo : MonoBehaviour {
     private bool respawning = false;
 
     private float respawnDelay;
-    private float maxRespawnDelay = 3f;
+    public static float maxRespawnDelay = 3f;
+
+    private bool canMove = true;
 
 	// Use this for initialization
     void Start() {
@@ -91,16 +93,33 @@ public class RacerInfo : MonoBehaviour {
         health -= amount;
 
         if (health < 0) {
-            SetRendererStatus(false);
-            Respawn();
+            StartCoroutine(Respawn());
         }
     }
 
-    private void Respawn() {
+    private IEnumerator Respawn() {
+        SetRendererStatus(false);
+        canMove = false;
+
+        yield return new WaitForSeconds(3f);
+
         respawning = true;
         respawnDelay = maxRespawnDelay;
 
         health = maxHealth;
+        canMove = true;
+    }
+
+    public float GetRespawnDelay() {
+        return respawnDelay;
+    }
+
+    public bool IsRespawning() {
+        return respawning;
+    }
+
+    public bool CanMove() {
+        return canMove;
     }
 
     private void SetRendererStatus(bool active) {

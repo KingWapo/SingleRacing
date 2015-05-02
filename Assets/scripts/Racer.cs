@@ -4,7 +4,8 @@ using System.Collections;
 public abstract class Racer : MonoBehaviour {
 
     // racer movement
-    public float speed = 30f;
+    public float speed;
+    private float maxSpeed = 30f;
     public float acceleration = 100f;
 
     private float rotation = 300f;
@@ -34,12 +35,14 @@ public abstract class Racer : MonoBehaviour {
 
 	// Use this for initialization
     protected virtual void Start() {
+        speed = maxSpeed;
+
         racerInfo = GetComponent<RacerInfo>();
 	}
 	
 	// Update is called once per frame
 	protected virtual void Update () {
-        if (GameManager.GetState() == GameManager.State.Racing) {
+        if (GameManager.GetState() == GameManager.State.Racing && racerInfo.CanMove()) {
             DoMovement();
         }
 
@@ -64,7 +67,9 @@ public abstract class Racer : MonoBehaviour {
                 transform.Rotate(0, turnAxis * Time.deltaTime * rotation * Mathf.Sign(velocity), 0);
             }
 
-            velocity = Mathf.Clamp(velocity + .5f * acclAxis, maxReverseVelocity, maxForwardVelocity);
+            velocity += .5f * acclAxis;
+
+            velocity = Mathf.Clamp(velocity, maxReverseVelocity, maxForwardVelocity);
         } else {
             velocity *= .9f;
             if (Mathf.Abs(velocity) <= .0001f) {
