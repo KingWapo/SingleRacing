@@ -27,11 +27,17 @@ public abstract class Racer : MonoBehaviour {
     private float cooldown = 0f;
     private float maxCooldown = 1f;
 
-    private int spreadLevel = 0;
+    private int spreadLevel;
+    private int minSpreadLevel = 0;
+    private int maxSpreadLevel = 5;
+    private int fireRateLevel;
+    private int minFireRateLevel = 0;
+    private int maxFireRateLevel = 3;
 
 	// Use this for initialization
 	protected virtual void Start () {
-	
+        spreadLevel = minSpreadLevel;
+        fireRateLevel = minFireRateLevel;
 	}
 	
 	// Update is called once per frame
@@ -45,9 +51,13 @@ public abstract class Racer : MonoBehaviour {
         }
 
         if (Input.GetKeyUp(KeyCode.Keypad2)) {
-            Debug.Log("INCREASING SPREAD: " + (spreadLevel + 1));
-            spreadLevel++;
-            spreadLevel = Mathf.Clamp(spreadLevel, 0, 5);
+            IncreaseSpreadLevel();
+            Debug.Log("DEBUG - INCREASING SPREAD: " + spreadLevel);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Keypad3)) {
+            IncreaseFireRateLevel();
+            Debug.Log("DEBUG - INCREASING FIRE RATE");
         }
 	}
 
@@ -127,7 +137,8 @@ public abstract class Racer : MonoBehaviour {
                     break;
             }
 
-            cooldown = maxCooldown;
+            cooldown = maxCooldown - ((maxCooldown / (maxFireRateLevel * 2)) * fireRateLevel);
+            Debug.Log("cooldown: " + cooldown);
             barrelIndex = (barrelIndex + 1) % 2;
         }
     }
@@ -140,6 +151,16 @@ public abstract class Racer : MonoBehaviour {
         shot.GetComponent<Projectile>().owner = gameObject;
 
         return shot;
+    }
+
+    public void IncreaseSpreadLevel() {
+        spreadLevel++;
+        spreadLevel = Mathf.Clamp(spreadLevel, minSpreadLevel, maxSpreadLevel);
+    }
+
+    public void IncreaseFireRateLevel() {
+        fireRateLevel++;
+        fireRateLevel = Mathf.Clamp(fireRateLevel, minFireRateLevel, maxFireRateLevel);
     }
 
     protected virtual void FinishRace() {

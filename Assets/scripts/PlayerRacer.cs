@@ -15,7 +15,7 @@ public class PlayerRacer : Racer {
         base.Update();
 
         if (Input.GetKeyUp(KeyCode.Keypad1)) {
-            Debug.Log("FINISHING RACE");
+            Debug.Log("DEBUG - FINISHING RACE");
             FinishRace();
         }
 
