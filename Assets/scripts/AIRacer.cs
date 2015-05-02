@@ -33,10 +33,4 @@ public class AIRacer : Racer {
             navAgent.SetDestination(trackManager.waypoints[waypointIndex].transform.position);
         }
     }
-
-    void OnTriggerStay(Collider other) {
-        if (other.tag == "Racer") {
-            Shoot();
-        }
-    }
 }

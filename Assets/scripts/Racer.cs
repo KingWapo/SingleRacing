@@ -86,7 +86,7 @@ public abstract class Racer : MonoBehaviour {
     }
 
     protected void Shoot() {
-        if (weaponsEnabled && cooldown <= 0) {
+        if (weaponsEnabled && cooldown <= 0 && racerInfo.CanMove()) {
             Vector3 origin;
 
             if (barrelIndex == 0) {
@@ -139,7 +139,7 @@ public abstract class Racer : MonoBehaviour {
         shot.transform.position = origin;
         shot.transform.LookAt(origin + transform.forward * 5);
         shot.GetComponent<Projectile>().SetSpeed(3f);
-        shot.GetComponent<Projectile>().owner = gameObject;
+        shot.GetComponent<Projectile>().ownerID = gameObject.GetInstanceID();
 
         return shot;
     }
@@ -149,4 +149,13 @@ public abstract class Racer : MonoBehaviour {
     }
 
     protected abstract void DoMovement();
+
+    void OnTriggerStay(Collider other) {
+        if (other.tag == "Racer") {
+            AIRacer otherRacer = other.GetComponent<AIRacer>();
+            if (otherRacer) {
+                otherRacer.Shoot();
+            }
+        }
+    }
 }

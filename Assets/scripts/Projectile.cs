@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour {
 
-    public GameObject owner;
+    public int ownerID;
 
     private float speed;
 

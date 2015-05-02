@@ -137,8 +137,16 @@ public class RacerInfo : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
+        if (GetComponent<PlayerRacer>()) {
+            Debug.Log("DEBUG - COLLIDING");
+        }
         if (other.tag == "Waypoint") {
             wayPointsHit++;
-        }
+        } /*else if (other.tag == "Projectile") {
+            if (other.GetComponent<Projectile>().ownerID != gameObject.GetInstanceID()) {
+                TakeDamage(.1f);
+                Destroy(other.gameObject);
+            }
+        }*/
     }
 }
