@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour {
                 Debug.Log("DEBUG - TIME TO WEAPONS: " + timeToWeapons);
             } else if (!weaponsEnabled) {
                 SetWeaponsActive(true);
-                Debug.Log("DEBUG - WEAPONS ENABLED");
             }
         }
 	}

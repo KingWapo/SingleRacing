@@ -19,6 +19,11 @@ public class PlayerRacer : Racer {
             FinishRace();
         }
 
+        if (Input.GetKeyUp(KeyCode.Keypad4)) {
+            Debug.Log("DEBUG - TAKE DAMAGE");
+            GetComponent<RacerInfo>().TakeDamage(.8f);
+        }
+
         if (Input.GetKey(KeyCode.Space) || Input.GetButton("360_ButtonA")) {
             Shoot();
         }

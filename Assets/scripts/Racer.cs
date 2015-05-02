@@ -29,17 +29,12 @@ public abstract class Racer : MonoBehaviour {
 
     public bool weaponsEnabled = false;
 
-    private int spreadLevel;
-    private int minSpreadLevel = 1;
-    private int maxSpreadLevel = 5;
-    private int fireRateLevel;
-    private int minFireRateLevel = 0;
-    private int maxFireRateLevel = 3;
+    // racer info
+    private RacerInfo racerInfo;
 
 	// Use this for initialization
-	protected virtual void Start () {
-        spreadLevel = minSpreadLevel;
-        fireRateLevel = minFireRateLevel;
+    protected virtual void Start() {
+        racerInfo = GetComponent<RacerInfo>();
 	}
 	
 	// Update is called once per frame
@@ -50,16 +45,6 @@ public abstract class Racer : MonoBehaviour {
 
         if (cooldown > 0) {
             cooldown -= Time.deltaTime;
-        }
-
-        if (Input.GetKeyUp(KeyCode.Keypad2)) {
-            IncreaseSpreadLevel();
-            Debug.Log("DEBUG - INCREASING SPREAD: " + spreadLevel);
-        }
-
-        if (Input.GetKeyUp(KeyCode.Keypad3)) {
-            IncreaseFireRateLevel();
-            Debug.Log("DEBUG - INCREASING FIRE RATE");
         }
 	}
 
@@ -105,7 +90,7 @@ public abstract class Racer : MonoBehaviour {
                 origin = rightGun.transform.position;
             }
 
-            switch (spreadLevel) {
+            switch (racerInfo.GetSpreadLevel()) {
                 case 5:
                     GameObject proj7 = ProduceProjectile(origin);
                     proj7.transform.Rotate(transform.up, spreadAngle);
@@ -139,7 +124,7 @@ public abstract class Racer : MonoBehaviour {
                     break;
             }
 
-            cooldown = maxCooldown - ((maxCooldown / (maxFireRateLevel * 2)) * fireRateLevel);
+            cooldown = maxCooldown - ((maxCooldown / (RacerInfo.maxFireRateLevel * 2)) * racerInfo.GetFireRateLevel());
             barrelIndex = (barrelIndex + 1) % 2;
         }
     }
@@ -152,16 +137,6 @@ public abstract class Racer : MonoBehaviour {
         shot.GetComponent<Projectile>().owner = gameObject;
 
         return shot;
-    }
-
-    public void IncreaseSpreadLevel() {
-        spreadLevel++;
-        spreadLevel = Mathf.Clamp(spreadLevel, minSpreadLevel, maxSpreadLevel);
-    }
-
-    public void IncreaseFireRateLevel() {
-        fireRateLevel++;
-        fireRateLevel = Mathf.Clamp(fireRateLevel, minFireRateLevel, maxFireRateLevel);
     }
 
     protected virtual void FinishRace() {
