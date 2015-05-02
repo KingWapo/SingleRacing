@@ -27,8 +27,10 @@ public abstract class Racer : MonoBehaviour {
     private float cooldown = 0f;
     private float maxCooldown = 1f;
 
+    public bool weaponsEnabled = false;
+
     private int spreadLevel;
-    private int minSpreadLevel = 0;
+    private int minSpreadLevel = 1;
     private int maxSpreadLevel = 5;
     private int fireRateLevel;
     private int minFireRateLevel = 0;
@@ -94,7 +96,7 @@ public abstract class Racer : MonoBehaviour {
     }
 
     protected void Shoot() {
-        if (cooldown <= 0) {
+        if (weaponsEnabled && cooldown <= 0) {
             Vector3 origin;
 
             if (barrelIndex == 0) {
@@ -138,7 +140,6 @@ public abstract class Racer : MonoBehaviour {
             }
 
             cooldown = maxCooldown - ((maxCooldown / (maxFireRateLevel * 2)) * fireRateLevel);
-            Debug.Log("cooldown: " + cooldown);
             barrelIndex = (barrelIndex + 1) % 2;
         }
     }
@@ -146,8 +147,8 @@ public abstract class Racer : MonoBehaviour {
     protected GameObject ProduceProjectile(Vector3 origin) {
         GameObject shot = (GameObject)Instantiate(projectile);
         shot.transform.position = origin;
-        shot.transform.LookAt(origin - new Vector3(5f, 0, 0));
-        shot.GetComponent<Projectile>().SetSpeed(1f);
+        shot.transform.LookAt(origin + transform.forward * 5);
+        shot.GetComponent<Projectile>().SetSpeed(3f);
         shot.GetComponent<Projectile>().owner = gameObject;
 
         return shot;

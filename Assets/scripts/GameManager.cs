@@ -3,7 +3,12 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
-    private RacerInfo[] racers;
+    private GameObject[] racers;
+
+    private float timeToWeapons;
+    private float maxTimeToWeapons = 5f;
+
+    private bool weaponsEnabled = false;
 
     public enum State {
         PreRace, Racing, PostRace
@@ -15,14 +20,24 @@ public class GameManager : MonoBehaviour {
 	void Start () {
         state = State.Racing;
 
-        racers = FindObjectsOfType<RacerInfo>();
+        racers = GameObject.FindGameObjectsWithTag("Racer");
         UpdatePosition();
+
+        ResetTimeToWeapons();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (state == State.Racing) {
             UpdatePosition();
+
+            if (timeToWeapons > 0) {
+                timeToWeapons -= Time.deltaTime;
+                Debug.Log("DEBUG - TIME TO WEAPONS: " + timeToWeapons);
+            } else if (!weaponsEnabled) {
+                SetWeaponsActive(true);
+                Debug.Log("DEBUG - WEAPONS ENABLED");
+            }
         }
 	}
 
@@ -32,6 +47,19 @@ public class GameManager : MonoBehaviour {
 
     public static State GetState() {
         return state;
+    }
+
+    public void ResetTimeToWeapons() {
+        timeToWeapons = maxTimeToWeapons;
+        weaponsEnabled = false;
+    }
+
+    public void SetWeaponsActive(bool active) {
+        for (int i = 0; i < racers.Length; i++) {
+            racers[i].GetComponent<Racer>().weaponsEnabled = active;
+        }
+
+        weaponsEnabled = active;
     }
 
     private void UpdatePosition() {
