@@ -7,19 +7,20 @@ public class Projectile : MonoBehaviour {
 
     private float speed;
 
-    private float distanceTravelled;
+    private float timeRemaining = 1f;
 
 	// Use this for initialization
-	void Start () {
-	
+    void Start() {
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
         transform.Translate(Vector3.forward * speed);
-        distanceTravelled += speed;
 
-        if (distanceTravelled > 10f) {
+        timeRemaining -= Time.deltaTime;
+
+        if (timeRemaining < 0) {
             Destroy(gameObject);
         }
 	}

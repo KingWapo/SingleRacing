@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour {
 
             if (timeToWeapons > 0) {
                 timeToWeapons -= Time.deltaTime;
-                Debug.Log("DEBUG - TIME TO WEAPONS: " + timeToWeapons);
+                //Debug.Log("DEBUG - TIME TO WEAPONS: " + timeToWeapons);
             } else if (!weaponsEnabled) {
                 SetWeaponsActive(true);
             }

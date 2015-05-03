@@ -4,17 +4,15 @@ using System.Collections;
 public abstract class Racer : MonoBehaviour {
 
     // racer movement
-    public float speed;
-    private float maxSpeed = 30f;
     public float acceleration = 100f;
 
     private float rotation = 300f;
     private float lean = 0f;
-    private float maxLean = 12f;
+    public static float maxLean = 12f;
 
     private float velocity;
-    private float maxForwardVelocity = 50f;
-    private float maxReverseVelocity = -4f;
+    public static float maxForwardVelocity = 50f;
+    public static float maxReverseVelocity = -4f;
 
     // racer shooting
     public GameObject projectile;
@@ -35,8 +33,6 @@ public abstract class Racer : MonoBehaviour {
 
 	// Use this for initialization
     protected virtual void Start() {
-        speed = maxSpeed;
-
         racerInfo = GetComponent<RacerInfo>();
 	}
 	
@@ -138,8 +134,8 @@ public abstract class Racer : MonoBehaviour {
         GameObject shot = (GameObject)Instantiate(projectile);
         shot.transform.position = origin;
         shot.transform.LookAt(origin + transform.forward * 5);
-        shot.GetComponent<Projectile>().SetSpeed(3f);
-        shot.GetComponent<Projectile>().ownerID = gameObject.GetInstanceID();
+        shot.GetComponent<Projectile>().SetSpeed(1f + velocity / 20f);
+        shot.GetComponent<Projectile>().ownerID = racerInfo.GetRacerInstanceID();
 
         return shot;
     }
@@ -155,6 +151,15 @@ public abstract class Racer : MonoBehaviour {
             AIRacer otherRacer = other.GetComponent<AIRacer>();
             if (otherRacer) {
                 otherRacer.Shoot();
+            }
+        }
+    }
+
+    void OnCollisionEnter(Collision other) {
+        if (other.gameObject.tag == "Projectile") {
+            if (racerInfo.GetRacerInstanceID() != other.gameObject.GetComponent<Projectile>().ownerID) {
+                racerInfo.TakeDamage(.1f);
+                Destroy(other.gameObject);
             }
         }
     }

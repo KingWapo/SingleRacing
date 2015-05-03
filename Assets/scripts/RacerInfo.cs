@@ -52,6 +52,10 @@ public class RacerInfo : MonoBehaviour {
             Debug.Log("DEBUG - INCREASING FIRE RATE");
         }
 
+        if (GetComponent<PlayerRacer>()) {
+            Debug.Log("DEBUG - INSTANCE ID: " + GetRacerInstanceID());
+        }
+
         if (respawning) {
             float modVal = .3f;
             float splitVal = modVal / 2f;
@@ -67,6 +71,7 @@ public class RacerInfo : MonoBehaviour {
             if (respawnDelay < 0) {
                 respawning = false;
                 SetRendererStatus(true);
+                GetComponent<BoxCollider>().enabled = true;
             }
         }
     }
@@ -105,6 +110,7 @@ public class RacerInfo : MonoBehaviour {
 
     private IEnumerator Respawn() {
         SetRendererStatus(false);
+        GetComponent<BoxCollider>().enabled = false;
         canMove = false;
 
         yield return new WaitForSeconds(3f);
@@ -137,16 +143,12 @@ public class RacerInfo : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
-        if (GetComponent<PlayerRacer>()) {
-            Debug.Log("DEBUG - COLLIDING");
-        }
         if (other.tag == "Waypoint") {
             wayPointsHit++;
-        } /*else if (other.tag == "Projectile") {
-            if (other.GetComponent<Projectile>().ownerID != gameObject.GetInstanceID()) {
-                TakeDamage(.1f);
-                Destroy(other.gameObject);
-            }
-        }*/
+        }
+    }
+
+    public int GetRacerInstanceID() {
+        return GetInstanceID();
     }
 }

@@ -14,7 +14,7 @@ public class AIRacer : Racer {
 
         trackManager = FindObjectOfType<TrackManager>();
         navAgent = GetComponent<NavMeshAgent>();
-        navAgent.speed = speed;
+        navAgent.speed = maxForwardVelocity;
         navAgent.acceleration = acceleration;
 	}
 	
