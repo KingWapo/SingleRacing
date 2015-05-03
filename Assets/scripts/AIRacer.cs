@@ -21,6 +21,10 @@ public class AIRacer : Racer {
 	// Update is called once per frame
 	protected override void Update () {
         base.Update();
+
+        if (speedBoost > 0) {
+            navAgent.speed = maxForwardVelocity + speedBoost;
+        }
 	}
 
     protected override void DoMovement() {
@@ -32,5 +36,9 @@ public class AIRacer : Racer {
 
             navAgent.SetDestination(trackManager.waypoints[waypointIndex].transform.position);
         }
+    }
+
+    protected override float RacerVelocity() {
+        return navAgent.velocity.magnitude;
     }
 }

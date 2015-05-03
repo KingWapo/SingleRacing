@@ -46,6 +46,10 @@ public class PlayerRacer : Racer {
         camera.transform.localRotation = Quaternion.Euler(new Vector3(15f, 0f, -GetLean()));
     }
 
+    protected override float RacerVelocity() {
+        return velocity;
+    }
+
     protected override void FinishRace() {
         base.FinishRace();
 

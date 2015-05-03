@@ -44,16 +44,10 @@ public class RacerInfo : MonoBehaviour {
     void Update() {
         if (Input.GetKeyUp(KeyCode.Keypad2)) {
             IncreaseSpreadLevel();
-            Debug.Log("DEBUG - INCREASING SPREAD: " + spreadLevel);
         }
 
         if (Input.GetKeyUp(KeyCode.Keypad3)) {
             IncreaseFireRateLevel();
-            Debug.Log("DEBUG - INCREASING FIRE RATE");
-        }
-
-        if (GetComponent<PlayerRacer>()) {
-            Debug.Log("DEBUG - INSTANCE ID: " + GetRacerInstanceID());
         }
 
         if (respawning) {

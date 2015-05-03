@@ -10,9 +10,13 @@ public abstract class Racer : MonoBehaviour {
     private float lean = 0f;
     public static float maxLean = 12f;
 
-    private float velocity;
+    protected float velocity;
     public static float maxForwardVelocity = 50f;
     public static float maxReverseVelocity = -4f;
+
+    protected float speedBoost = 0f;
+    public static float maxBoost = 20f;
+    public static float boostDuration = 2f;
 
     // racer shooting
     public GameObject projectile;
@@ -45,10 +49,17 @@ public abstract class Racer : MonoBehaviour {
         if (cooldown > 0) {
             cooldown -= Time.deltaTime;
         }
+
+        if (speedBoost > 0) {
+            velocity = maxForwardVelocity + speedBoost;
+            speedBoost -= (maxBoost / boostDuration) * Time.deltaTime;
+        } else if (speedBoost < 0) {
+            speedBoost = 0;
+        }
 	}
 
     protected void UpdateMovement(float turnAxis, float acclAxis) {
-        if (Mathf.Abs(turnAxis) > .1f && Mathf.Abs(acclAxis) > .1f) {
+        if (Mathf.Abs(turnAxis) > .1f && Mathf.Abs(velocity + speedBoost) > .1f) {
             lean = Mathf.Clamp(lean - Mathf.Sign(turnAxis), -maxLean, maxLean);
         } else {
             if (lean > 0f) {
@@ -58,14 +69,16 @@ public abstract class Racer : MonoBehaviour {
             }
         }
 
-        if (Mathf.Abs(acclAxis) > .1f) {
+        if (Mathf.Abs(velocity + speedBoost) > .1f) {
             if (turnAxis != 0) {
                 transform.Rotate(0, turnAxis * Time.deltaTime * rotation * Mathf.Sign(velocity), 0);
             }
+        }
 
+        if (Mathf.Abs(acclAxis) > .1f) {
             velocity += .5f * acclAxis;
 
-            velocity = Mathf.Clamp(velocity, maxReverseVelocity, maxForwardVelocity);
+            velocity = Mathf.Clamp(velocity, maxReverseVelocity, maxForwardVelocity + speedBoost);
         } else {
             velocity *= .9f;
             if (Mathf.Abs(velocity) <= .0001f) {
@@ -134,10 +147,14 @@ public abstract class Racer : MonoBehaviour {
         GameObject shot = (GameObject)Instantiate(projectile);
         shot.transform.position = origin;
         shot.transform.LookAt(origin + transform.forward * 5);
-        shot.GetComponent<Projectile>().SetSpeed(1f + velocity / 20f);
+        shot.GetComponent<Projectile>().SetSpeed(1f + RacerVelocity() / 20f);
         shot.GetComponent<Projectile>().ownerID = racerInfo.GetRacerInstanceID();
 
         return shot;
+    }
+
+    public void StartSpeedBoost() {
+        speedBoost = maxBoost;
     }
 
     protected virtual void FinishRace() {
@@ -145,6 +162,7 @@ public abstract class Racer : MonoBehaviour {
     }
 
     protected abstract void DoMovement();
+    protected abstract float RacerVelocity();
 
     void OnTriggerStay(Collider other) {
         if (other.tag == "Racer") {
