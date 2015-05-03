@@ -28,7 +28,7 @@ public class AIRacer : Racer {
 	}
 
     protected override void DoMovement() {
-        if (Vector3.Distance(navAgent.destination, navAgent.transform.position) < 5.0f) {
+        if (Vector3.Distance(navAgent.destination, navAgent.transform.position) < 25.0f) {
             waypointIndex++;
 
             if (waypointIndex >= trackManager.waypoints.Length)

@@ -16,15 +16,6 @@ public class SpeedPad : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Racer") {
             other.GetComponent<Racer>().StartSpeedBoost();
-            /*
-            AIRacer aiRacer = other.GetComponent<AIRacer>();
-            PlayerRacer pcRacer = other.GetComponent<PlayerRacer>();
-
-            if (aiRacer) {
-                aiRacer.StartSpeedBoost();
-            } else if (pcRacer) {
-                pcRacer.StartSpeedBoost();
-            }*/
         }
     }
 }

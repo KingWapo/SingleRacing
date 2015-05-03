@@ -15,8 +15,8 @@ public abstract class Racer : MonoBehaviour {
     public static float maxReverseVelocity = -4f;
 
     protected float speedBoost = 0f;
-    public static float maxBoost = 20f;
-    public static float boostDuration = 2f;
+    public static float maxBoost = 30f;
+    public static float boostDuration = 1f;
 
     // racer shooting
     public GameObject projectile;
@@ -42,7 +42,7 @@ public abstract class Racer : MonoBehaviour {
 	
 	// Update is called once per frame
 	protected virtual void Update () {
-        if (GameManager.GetState() == GameManager.State.Racing && racerInfo.CanMove()) {
+        if (RaceManager.GetState() == RaceManager.State.Racing && racerInfo.CanMove()) {
             DoMovement();
         }
 
