@@ -64,7 +64,7 @@ public class AIRacer : Racer {
     }
 
     protected override void DoMovement() {
-        Debug.Log("Brandon Sux");
+        Debug.Log("Adam blows knobs");
     }
 
     protected override float RacerVelocity() {
