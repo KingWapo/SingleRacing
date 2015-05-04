@@ -7,6 +7,8 @@ public class MainMenu : MonoBehaviour {
     public GameObject controlPanel;
     public GameObject creditPanel;
 
+    public GameManager manager;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -37,5 +39,31 @@ public class MainMenu : MonoBehaviour {
 
     public void ExitGame() {
         Application.Quit();
+    }
+
+    public void TopHat() {
+        manager.QueueMap("T-Track");
+        Play();
+    }
+
+    public void TheTwins() {
+        //manager.QueueMap("Figure-8");
+        Play();
+    }
+
+    public void SecretDoor() {
+        //manager.QueueMap("Standard");
+        Play();
+    }
+
+    public void Tournament() {
+        manager.QueueMap("T-Track");
+        //manager.QueueMap("Figure-8");
+        //manager.QueueMap("Standard");
+        Play();
+    }
+
+    private void Play() {
+        manager.NextLevel();
     }
 }
