@@ -1,0 +1,911 @@
+fileFormatVersion: 2
+guid: 73952baf2bde5124cb7a1ca33fe1f3be
+timeCreated: 1430773736
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: ball_IK
+    100002: ball_IK 1
+    100004: dusk_ctrl1
+    100006: dusk_ctrl10
+    100008: dusk_ctrl11
+    100010: dusk_ctrl12
+    100012: dusk_ctrl13
+    100014: dusk_ctrl14
+    100016: dusk_ctrl2
+    100018: dusk_ctrl3
+    100020: dusk_ctrl6
+    100022: dusk_ctrl7
+    100024: dusk_ctrl9
+    100026: dusk_joinjoint12
+    100028: dusk_joinjoint40
+    100030: dusk_joinjoint45
+    100032: dusk_joinjoint50
+    100034: dusk_joinjoint51
+    100036: dusk_joinjoint52
+    100038: dusk_joint13
+    100040: dusk_joint14
+    100042: dusk_joint15
+    100044: dusk_joint16
+    100046: dusk_joint18
+    100048: dusk_joint19
+    100050: dusk_joint19 1
+    100052: dusk_joint2
+    100054: dusk_joint20
+    100056: dusk_joint20 1
+    100058: dusk_joint21
+    100060: dusk_joint21 1
+    100062: dusk_joint22
+    100064: dusk_joint22 1
+    100066: dusk_joint24
+    100068: dusk_joint25
+    100070: dusk_joint26
+    100072: dusk_joint3
+    100074: dusk_joint30
+    100076: dusk_joint30 1
+    100078: dusk_joint4
+    100080: dusk_joint42
+    100082: dusk_joint46
+    100084: dusk_joint47
+    100086: dusk_joint48
+    100088: dusk_joint49
+    100090: dusk_joint5
+    100092: dusk_joint50
+    100094: dusk_joint51
+    100096: dusk_joint52
+    100098: dusk_joint53
+    100100: dusk_joint6
+    100102: dusk_joint7
+    100104: dusk_joint8
+    100106: //RootNode
+    100108: Duskalo_Main_CTRL
+    100110: Duskalo_Mesh
+    100112: Duskalo_skeleton_grp
+    100114: Duskalo_Upper_CTRL
+    100116: Enhanced_IK__par_GRP
+    100118: Enhanced_IK_g
+    100120: enhanced_ik_JT_end
+    100122: enhanced_ik_JT_end 1
+    100124: Fox_Mesh
+    100126: H_legs
+    100128: Head_Point_Ctrl
+    100130: Heel_ctrl_grp
+    100132: Heel_ctrl_grp 1
+    100134: Hip_ori_loc
+    100136: Hip_ori_X_loc_jt
+    100138: Hip_ori_YZ_JT
+    100140: Hip_parent
+    100142: ikHandle1
+    100144: ikHandle17
+    100146: ikHandle18
+    100148: internal_tools
+    100150: invis_IK_knee_ori_X_node
+    100152: invis_JT_knee_ori_X_node
+    100154: invis_jtEND_knee_ori_X_node
+    100156: joint35
+    100158: Knee_ori_to_feet
+    100160: Knee_ori_to_foot
+    100162: L_enhanced_ORI_grp
+    100164: L_fore_foot_ctrl
+    100166: L_forearm_PV
+    100168: L_heel_ctrl
+    100170: L_hind1:Flipped_mover
+    100172: L_hind1:flipper
+    100174: L_hind1:grp_constraints
+    100176: L_hind1:INVis_pointer_PV
+    100178: L_hind1:invis_world_dummy
+    100180: L_hind1:Knee_pointer_grp_LOKT
+    100182: L_hind1:ori_grp_PV
+    100184: L_hind1:PSTJ
+    100186: L_hind1:PSTJ_ctrl_IK_grp
+    100188: L_hind1:PSTJ_ctrl_PV_grp
+    100190: L_hind1:PSTJ_IK_grp
+    100192: L_hind1:PSTJ_IK_JT
+    100194: L_hind1:PSTJ_IK_JT_M
+    100196: L_hind1:PSTJ_IK_loc
+    100198: L_hind1:PSTJ_JT_GRPS
+    100200: L_hind1:PSTJ_locator_grp
+    100202: L_hind1:PSTJ_measure
+    100204: L_hind1:PSTJ_ori
+    100206: L_hind1:PSTJ_ORI_IK
+    100208: L_hind1:PSTJ_PV_loc
+    100210: L_hind1:PSTJ_ruler
+    100212: L_hind1:PV_buffer
+    100214: L_hind1:Ruler_IK
+    100216: L_hind1:world_invis_PV_grp
+    100218: L_hind_enhanced_ik_JT
+    100220: L_hind_EnhancedIK
+    100222: L_hind_foot_ctrl
+    100224: L_hind_leg_PV
+    100226: L_hind_main_IK
+    100228: L_hind_Paw_rotate
+    100230: L_hind_PV_ctrl
+    100232: L_hind_PV_world_grp
+    100234: L_palm_Bend
+    100236: L_Scap_loc_reciever
+    100238: L_Scap_tool_grp
+    100240: L_Scapula_Ctrl
+    100242: L_side_ctrl
+    100244: L_transfer_data_elbow_IK_loc
+    100246: L_world_dummy
+    100248: Palm_Bend
+    100250: Palm_IK
+    100252: palm_IK
+    100254: Palm_IK_Group
+    100256: Palm_IK_Grp
+    100258: Paw_PV_grp
+    100260: Paw_PV_grp 1
+    100262: R_enhanced_ORI_grp
+    100264: R_fore_foot_ctrl
+    100266: R_forearm_PV
+    100268: R_heel_ctrl
+    100270: R_hind1:Flipped_mover
+    100272: R_hind1:flipper
+    100274: R_hind1:grp_constraints
+    100276: R_hind1:INVis_pointer_PV
+    100278: R_hind1:invis_world_dummy
+    100280: R_hind1:Knee_pointer_grp_LOKT
+    100282: R_hind1:nurbsCircle1
+    100284: R_hind1:PSTJ
+    100286: R_hind1:PSTJ_ctrl_IK_grp
+    100288: R_hind1:PSTJ_ctrl_PV_grp
+    100290: R_hind1:PSTJ_IK_grp
+    100292: R_hind1:PSTJ_IK_JT
+    100294: R_hind1:PSTJ_IK_JT_M
+    100296: R_hind1:PSTJ_IK_loc
+    100298: R_hind1:PSTJ_JT_GRPS
+    100300: R_hind1:PSTJ_locator_grp
+    100302: R_hind1:PSTJ_measure
+    100304: R_hind1:PSTJ_ori
+    100306: R_hind1:PSTJ_ORI_IK
+    100308: R_hind1:PSTJ_PV_loc
+    100310: R_hind1:PSTJ_ruler
+    100312: R_hind1:PV_buffer
+    100314: R_hind1:Ruler_IK
+    100316: R_hind1:world_invis_PV_grp
+    100318: R_hind_enhanced_ik_JT
+    100320: R_hind_EnhancedIK
+    100322: R_hind_foot_ctrl
+    100324: R_hind_leg_PV
+    100326: R_hind_Main_IK
+    100328: R_hind_ori_grp_PV
+    100330: R_hind_Paw_rotate
+    100332: R_hind_PV_world_grp
+    100334: R_Scap_loc_reciever
+    100336: R_Scap_tool_grp
+    100338: R_Scapula_Ctrl
+    100340: R_side_ctrl
+    100342: R_transfer_data_elbow_IK_loc
+    100344: R_world_dummy
+    100346: Root_Dusk_Joint
+    100348: Rotate_IK_grp
+    100350: Rotate_IK_grp 1
+    100352: Spine_ctrl
+    100354: Toe_and_Heel
+    100356: Toe_and_heel
+    100358: TOE_IK
+    100360: Toe_IK
+    100362: toe_IK
+    100364: TOE_IK 1
+    100366: Toe_Pivot_grp
+    100368: toe_pivot_grp
+    100370: Toe_swiivel_piv
+    100372: Toe_swivel_piv
+    100374: Wolf_Mesh
+    100376: Wolf_Pelvis_ctrl
+    100378: wrist_IK
+    100380: wrist_IK 1
+    100382: Wrist_IK_grp
+    100384: wrist_IK_grp
+    100386: XY_hip_ori_target
+    100388: YZ_JT_end
+    400000: ball_IK
+    400002: ball_IK 1
+    400004: dusk_ctrl1
+    400006: dusk_ctrl10
+    400008: dusk_ctrl11
+    400010: dusk_ctrl12
+    400012: dusk_ctrl13
+    400014: dusk_ctrl14
+    400016: dusk_ctrl2
+    400018: dusk_ctrl3
+    400020: dusk_ctrl6
+    400022: dusk_ctrl7
+    400024: dusk_ctrl9
+    400026: dusk_joinjoint12
+    400028: dusk_joinjoint40
+    400030: dusk_joinjoint45
+    400032: dusk_joinjoint50
+    400034: dusk_joinjoint51
+    400036: dusk_joinjoint52
+    400038: dusk_joint13
+    400040: dusk_joint14
+    400042: dusk_joint15
+    400044: dusk_joint16
+    400046: dusk_joint18
+    400048: dusk_joint19
+    400050: dusk_joint19 1
+    400052: dusk_joint2
+    400054: dusk_joint20
+    400056: dusk_joint20 1
+    400058: dusk_joint21
+    400060: dusk_joint21 1
+    400062: dusk_joint22
+    400064: dusk_joint22 1
+    400066: dusk_joint24
+    400068: dusk_joint25
+    400070: dusk_joint26
+    400072: dusk_joint3
+    400074: dusk_joint30
+    400076: dusk_joint30 1
+    400078: dusk_joint4
+    400080: dusk_joint42
+    400082: dusk_joint46
+    400084: dusk_joint47
+    400086: dusk_joint48
+    400088: dusk_joint49
+    400090: dusk_joint5
+    400092: dusk_joint50
+    400094: dusk_joint51
+    400096: dusk_joint52
+    400098: dusk_joint53
+    400100: dusk_joint6
+    400102: dusk_joint7
+    400104: dusk_joint8
+    400106: //RootNode
+    400108: Duskalo_Main_CTRL
+    400110: Duskalo_Mesh
+    400112: Duskalo_skeleton_grp
+    400114: Duskalo_Upper_CTRL
+    400116: Enhanced_IK__par_GRP
+    400118: Enhanced_IK_g
+    400120: enhanced_ik_JT_end
+    400122: enhanced_ik_JT_end 1
+    400124: Fox_Mesh
+    400126: H_legs
+    400128: Head_Point_Ctrl
+    400130: Heel_ctrl_grp
+    400132: Heel_ctrl_grp 1
+    400134: Hip_ori_loc
+    400136: Hip_ori_X_loc_jt
+    400138: Hip_ori_YZ_JT
+    400140: Hip_parent
+    400142: ikHandle1
+    400144: ikHandle17
+    400146: ikHandle18
+    400148: internal_tools
+    400150: invis_IK_knee_ori_X_node
+    400152: invis_JT_knee_ori_X_node
+    400154: invis_jtEND_knee_ori_X_node
+    400156: joint35
+    400158: Knee_ori_to_feet
+    400160: Knee_ori_to_foot
+    400162: L_enhanced_ORI_grp
+    400164: L_fore_foot_ctrl
+    400166: L_forearm_PV
+    400168: L_heel_ctrl
+    400170: L_hind1:Flipped_mover
+    400172: L_hind1:flipper
+    400174: L_hind1:grp_constraints
+    400176: L_hind1:INVis_pointer_PV
+    400178: L_hind1:invis_world_dummy
+    400180: L_hind1:Knee_pointer_grp_LOKT
+    400182: L_hind1:ori_grp_PV
+    400184: L_hind1:PSTJ
+    400186: L_hind1:PSTJ_ctrl_IK_grp
+    400188: L_hind1:PSTJ_ctrl_PV_grp
+    400190: L_hind1:PSTJ_IK_grp
+    400192: L_hind1:PSTJ_IK_JT
+    400194: L_hind1:PSTJ_IK_JT_M
+    400196: L_hind1:PSTJ_IK_loc
+    400198: L_hind1:PSTJ_JT_GRPS
+    400200: L_hind1:PSTJ_locator_grp
+    400202: L_hind1:PSTJ_measure
+    400204: L_hind1:PSTJ_ori
+    400206: L_hind1:PSTJ_ORI_IK
+    400208: L_hind1:PSTJ_PV_loc
+    400210: L_hind1:PSTJ_ruler
+    400212: L_hind1:PV_buffer
+    400214: L_hind1:Ruler_IK
+    400216: L_hind1:world_invis_PV_grp
+    400218: L_hind_enhanced_ik_JT
+    400220: L_hind_EnhancedIK
+    400222: L_hind_foot_ctrl
+    400224: L_hind_leg_PV
+    400226: L_hind_main_IK
+    400228: L_hind_Paw_rotate
+    400230: L_hind_PV_ctrl
+    400232: L_hind_PV_world_grp
+    400234: L_palm_Bend
+    400236: L_Scap_loc_reciever
+    400238: L_Scap_tool_grp
+    400240: L_Scapula_Ctrl
+    400242: L_side_ctrl
+    400244: L_transfer_data_elbow_IK_loc
+    400246: L_world_dummy
+    400248: Palm_Bend
+    400250: Palm_IK
+    400252: palm_IK
+    400254: Palm_IK_Group
+    400256: Palm_IK_Grp
+    400258: Paw_PV_grp
+    400260: Paw_PV_grp 1
+    400262: R_enhanced_ORI_grp
+    400264: R_fore_foot_ctrl
+    400266: R_forearm_PV
+    400268: R_heel_ctrl
+    400270: R_hind1:Flipped_mover
+    400272: R_hind1:flipper
+    400274: R_hind1:grp_constraints
+    400276: R_hind1:INVis_pointer_PV
+    400278: R_hind1:invis_world_dummy
+    400280: R_hind1:Knee_pointer_grp_LOKT
+    400282: R_hind1:nurbsCircle1
+    400284: R_hind1:PSTJ
+    400286: R_hind1:PSTJ_ctrl_IK_grp
+    400288: R_hind1:PSTJ_ctrl_PV_grp
+    400290: R_hind1:PSTJ_IK_grp
+    400292: R_hind1:PSTJ_IK_JT
+    400294: R_hind1:PSTJ_IK_JT_M
+    400296: R_hind1:PSTJ_IK_loc
+    400298: R_hind1:PSTJ_JT_GRPS
+    400300: R_hind1:PSTJ_locator_grp
+    400302: R_hind1:PSTJ_measure
+    400304: R_hind1:PSTJ_ori
+    400306: R_hind1:PSTJ_ORI_IK
+    400308: R_hind1:PSTJ_PV_loc
+    400310: R_hind1:PSTJ_ruler
+    400312: R_hind1:PV_buffer
+    400314: R_hind1:Ruler_IK
+    400316: R_hind1:world_invis_PV_grp
+    400318: R_hind_enhanced_ik_JT
+    400320: R_hind_EnhancedIK
+    400322: R_hind_foot_ctrl
+    400324: R_hind_leg_PV
+    400326: R_hind_Main_IK
+    400328: R_hind_ori_grp_PV
+    400330: R_hind_Paw_rotate
+    400332: R_hind_PV_world_grp
+    400334: R_Scap_loc_reciever
+    400336: R_Scap_tool_grp
+    400338: R_Scapula_Ctrl
+    400340: R_side_ctrl
+    400342: R_transfer_data_elbow_IK_loc
+    400344: R_world_dummy
+    400346: Root_Dusk_Joint
+    400348: Rotate_IK_grp
+    400350: Rotate_IK_grp 1
+    400352: Spine_ctrl
+    400354: Toe_and_Heel
+    400356: Toe_and_heel
+    400358: TOE_IK
+    400360: Toe_IK
+    400362: toe_IK
+    400364: TOE_IK 1
+    400366: Toe_Pivot_grp
+    400368: toe_pivot_grp
+    400370: Toe_swiivel_piv
+    400372: Toe_swivel_piv
+    400374: Wolf_Mesh
+    400376: Wolf_Pelvis_ctrl
+    400378: wrist_IK
+    400380: wrist_IK 1
+    400382: Wrist_IK_grp
+    400384: wrist_IK_grp
+    400386: XY_hip_ori_target
+    400388: YZ_JT_end
+    2300000: Fox_Mesh
+    2300002: L_forearm_PV
+    2300004: L_hind1:INVis_pointer_PV
+    2300006: L_hind_leg_PV
+    2300008: R_forearm_PV
+    2300010: R_hind1:INVis_pointer_PV
+    2300012: R_hind_leg_PV
+    2300014: Wolf_Mesh
+    3300000: Fox_Mesh
+    3300002: L_forearm_PV
+    3300004: L_hind1:INVis_pointer_PV
+    3300006: L_hind_leg_PV
+    3300008: R_forearm_PV
+    3300010: R_hind1:INVis_pointer_PV
+    3300012: R_hind_leg_PV
+    3300014: Wolf_Mesh
+    4300000: Wolf_Mesh
+    4300002: Fox_Mesh
+    4300004: Duskalo_Mesh
+    4300006: R_forearm_PV
+    4300008: L_forearm_PV
+    4300010: L_hind_leg_PV
+    4300012: R_hind_leg_PV
+    4300014: L_hind1:INVis_pointer_PV
+    4300016: R_hind1:INVis_pointer_PV
+    7400000: Duskalo_Running
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Duskalo_Mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Duskalo_Running
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 20
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Duskalo_Main_CTRL
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint12
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint12/dusk_joint13
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint12/dusk_joint13/dusk_joint14
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint12/dusk_joint13/dusk_joint14/dusk_joint15
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint12/dusk_joint13/dusk_joint14/dusk_joint15/dusk_joint16
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint12/dusk_joint13/dusk_joint14/dusk_joint15/dusk_joint16/dusk_joint47
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint45
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint45/dusk_joint46
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint51
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint51/dusk_joint48
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint51/dusk_joint48/dusk_joint49
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint51/dusk_joint48/dusk_joint49/dusk_joint50
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint51/dusk_joint48/dusk_joint49/dusk_joint50/dusk_joint51
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint51/dusk_joint48/dusk_joint49/dusk_joint50/dusk_joint51/dusk_joint52
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint52
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joinjoint52/dusk_joint53
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joint6
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joint6/dusk_joint7
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joint6/dusk_joint7/dusk_joint8
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joint6/dusk_joint7/dusk_joint8/dusk_joinjoint40
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joint6/dusk_joint7/dusk_joint8/dusk_joinjoint40/dusk_joint30
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joint6/dusk_joint7/dusk_joint8/dusk_joinjoint50
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joint6/dusk_joint7/dusk_joint8/dusk_joinjoint50/dusk_joint30
+          1
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint2/dusk_joint3/dusk_joint4/dusk_joint5/dusk_joint6/dusk_joint7/dusk_joint8/joint35
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint18
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint18/dusk_joint19
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint18/dusk_joint19/dusk_joint20
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint18/dusk_joint19/dusk_joint20/dusk_joint21
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint18/dusk_joint19/dusk_joint20/dusk_joint21/dusk_joint22
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint24
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint24/dusk_joint25
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint24/dusk_joint25/dusk_joint26
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint42
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint42/dusk_joint19
+          1
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint42/dusk_joint19
+          1/dusk_joint20 1
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint42/dusk_joint19
+          1/dusk_joint20 1/dusk_joint21 1
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_skeleton_grp/Root_Dusk_Joint/dusk_joint42/dusk_joint19
+          1/dusk_joint20 1/dusk_joint21 1/dusk_joint22 1
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/L_Scap_loc_reciever
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/L_Scapula_Ctrl
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/L_Scapula_Ctrl/ikHandle18
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/L_world_dummy
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/L_world_dummy/L_hind_EnhancedIK
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/R_Scap_loc_reciever
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/R_Scapula_Ctrl
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/R_Scapula_Ctrl/ikHandle17
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/R_world_dummy
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/R_world_dummy/R_hind_EnhancedIK
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/Spine_ctrl
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/Spine_ctrl/dusk_ctrl1
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/Spine_ctrl/dusk_ctrl2
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/Spine_ctrl/dusk_ctrl3
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/Spine_ctrl/dusk_ctrl6
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/Spine_ctrl/dusk_ctrl7
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/Spine_ctrl/dusk_ctrl9
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/Spine_ctrl/dusk_ctrl10
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/Spine_ctrl/dusk_ctrl11
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/Spine_ctrl/dusk_ctrl13
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/Spine_ctrl/dusk_ctrl14
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/Spine_ctrl/Head_Point_Ctrl
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/Spine_ctrl/Head_Point_Ctrl/dusk_ctrl12
+        weight: 1
+      - path: Duskalo_Main_CTRL/Duskalo_Upper_CTRL/Spine_ctrl/Wolf_Pelvis_ctrl
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/Hip_parent
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/Hip_parent/Hip_ori_loc
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/Hip_parent/internal_tools
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/Hip_parent/internal_tools/Hip_ori_X_loc_jt
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/Hip_parent/internal_tools/Hip_ori_YZ_JT
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/Hip_parent/internal_tools/Hip_ori_YZ_JT/YZ_JT_end
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/Hip_parent/internal_tools/XY_hip_ori_target
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/Hip_parent/internal_tools/XY_hip_ori_target/ikHandle1
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:Knee_pointer_grp_LOKT
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:Knee_pointer_grp_LOKT/Knee_ori_to_feet
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:Knee_pointer_grp_LOKT/Knee_ori_to_feet/L_hind1:flipper
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:Knee_pointer_grp_LOKT/Knee_ori_to_feet/L_hind1:flipper/L_hind1:Flipped_mover
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:Knee_pointer_grp_LOKT/Knee_ori_to_feet/L_hind1:flipper/L_hind1:Flipped_mover/L_hind1:world_invis_PV_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:Knee_pointer_grp_LOKT/Knee_ori_to_feet/L_hind1:flipper/L_hind1:Flipped_mover/L_hind1:world_invis_PV_grp/L_hind1:invis_world_dummy
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:Knee_pointer_grp_LOKT/Knee_ori_to_feet/L_hind1:flipper/L_hind1:Flipped_mover/L_hind1:world_invis_PV_grp/L_hind1:invis_world_dummy/L_hind1:INVis_pointer_PV
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:Knee_pointer_grp_LOKT/Knee_ori_to_feet/L_hind1:flipper/L_hind1:Flipped_mover/L_hind1:world_invis_PV_grp/L_hind1:invis_world_dummy/L_hind1:INVis_pointer_PV/invis_IK_knee_ori_X_node
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:Knee_pointer_grp_LOKT/L_hind1:grp_constraints
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:PSTJ
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:PSTJ/L_hind1:PSTJ_measure
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:PSTJ/L_hind1:PSTJ_measure/L_hind1:PSTJ_IK_JT_M
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:PSTJ/L_hind1:PSTJ_measure/L_hind1:PSTJ_ruler
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:PSTJ/L_hind1:PSTJ_ori
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:PSTJ/L_hind1:PSTJ_ori/L_hind1:PSTJ_IK_JT
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:PSTJ_IK_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:PSTJ_IK_grp/L_hind1:Ruler_IK
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:PSTJ_IK_grp/L_hind1:Ruler_IK/L_hind1:PSTJ_ORI_IK
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:PSTJ_locator_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:PSTJ_locator_grp/L_hind1:PSTJ_ctrl_IK_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:PSTJ_locator_grp/L_hind1:PSTJ_ctrl_IK_grp/L_hind1:PSTJ_IK_loc
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:PSTJ_locator_grp/L_hind1:PSTJ_ctrl_PV_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:PSTJ_locator_grp/L_hind1:PSTJ_ctrl_PV_grp/L_hind1:PV_buffer
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/L_hind1:PSTJ_JT_GRPS/L_hind1:PSTJ_locator_grp/L_hind1:PSTJ_ctrl_PV_grp/L_hind1:PV_buffer/L_hind1:PSTJ_PV_loc
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:Knee_pointer_grp_LOKT
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:Knee_pointer_grp_LOKT/Knee_ori_to_foot
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:Knee_pointer_grp_LOKT/Knee_ori_to_foot/R_hind1:flipper
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:Knee_pointer_grp_LOKT/Knee_ori_to_foot/R_hind1:flipper/R_hind1:Flipped_mover
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:Knee_pointer_grp_LOKT/Knee_ori_to_foot/R_hind1:flipper/R_hind1:Flipped_mover/R_hind1:world_invis_PV_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:Knee_pointer_grp_LOKT/Knee_ori_to_foot/R_hind1:flipper/R_hind1:Flipped_mover/R_hind1:world_invis_PV_grp/R_hind1:invis_world_dummy
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:Knee_pointer_grp_LOKT/Knee_ori_to_foot/R_hind1:flipper/R_hind1:Flipped_mover/R_hind1:world_invis_PV_grp/R_hind1:invis_world_dummy/R_hind1:INVis_pointer_PV
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:Knee_pointer_grp_LOKT/Knee_ori_to_foot/R_hind1:flipper/R_hind1:Flipped_mover/R_hind1:world_invis_PV_grp/R_hind1:invis_world_dummy/R_hind1:INVis_pointer_PV/invis_JT_knee_ori_X_node
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:Knee_pointer_grp_LOKT/Knee_ori_to_foot/R_hind1:flipper/R_hind1:Flipped_mover/R_hind1:world_invis_PV_grp/R_hind1:invis_world_dummy/R_hind1:INVis_pointer_PV/invis_JT_knee_ori_X_node/invis_jtEND_knee_ori_X_node
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:Knee_pointer_grp_LOKT/R_hind1:grp_constraints
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:PSTJ
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:PSTJ/R_hind1:PSTJ_measure
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:PSTJ/R_hind1:PSTJ_measure/R_hind1:PSTJ_IK_JT_M
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:PSTJ/R_hind1:PSTJ_measure/R_hind1:PSTJ_ruler
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:PSTJ/R_hind1:PSTJ_ori
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:PSTJ/R_hind1:PSTJ_ori/R_hind1:PSTJ_IK_JT
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:PSTJ_IK_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:PSTJ_IK_grp/R_hind1:Ruler_IK
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:PSTJ_IK_grp/R_hind1:Ruler_IK/R_hind1:PSTJ_ORI_IK
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:PSTJ_locator_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:PSTJ_locator_grp/R_hind1:PSTJ_ctrl_IK_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:PSTJ_locator_grp/R_hind1:PSTJ_ctrl_IK_grp/R_hind1:PSTJ_IK_loc
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:PSTJ_locator_grp/R_hind1:PSTJ_ctrl_PV_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:PSTJ_locator_grp/R_hind1:PSTJ_ctrl_PV_grp/R_hind1:PV_buffer
+        weight: 1
+      - path: Duskalo_Main_CTRL/H_legs/R_hind1:PSTJ_JT_GRPS/R_hind1:PSTJ_locator_grp/R_hind1:PSTJ_ctrl_PV_grp/R_hind1:PV_buffer/R_hind1:PSTJ_PV_loc
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_fore_foot_ctrl
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_fore_foot_ctrl/Enhanced_IK__par_GRP
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_fore_foot_ctrl/Enhanced_IK__par_GRP/Enhanced_IK_g
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_fore_foot_ctrl/Enhanced_IK__par_GRP/Enhanced_IK_g/Palm_IK_Grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_fore_foot_ctrl/Enhanced_IK__par_GRP/Enhanced_IK_g/Palm_IK_Grp/Palm_IK
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_fore_foot_ctrl/Enhanced_IK__par_GRP/Enhanced_IK_g/Palm_IK_Grp/Wrist_IK_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_fore_foot_ctrl/Enhanced_IK__par_GRP/Enhanced_IK_g/Palm_IK_Grp/Wrist_IK_grp/wrist_IK
+          1
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_fore_foot_ctrl/L_palm_Bend
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_fore_foot_ctrl/L_palm_Bend/toe_IK
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_forearm_PV
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl/Heel_ctrl_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl/Heel_ctrl_grp/L_heel_ctrl
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl/L_hind_enhanced_ik_JT
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl/L_hind_enhanced_ik_JT/enhanced_ik_JT_end
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl/L_hind_PV_ctrl
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl/Paw_PV_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl/Paw_PV_grp/L_hind_Paw_rotate
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl/Toe_and_Heel
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl/Toe_and_Heel/Toe_Pivot_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl/Toe_and_Heel/Toe_Pivot_grp/ball_IK
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl/Toe_and_Heel/Toe_Pivot_grp/L_enhanced_ORI_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl/Toe_and_Heel/Toe_Pivot_grp/L_enhanced_ORI_grp/Rotate_IK_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl/Toe_and_Heel/Toe_Pivot_grp/L_enhanced_ORI_grp/Rotate_IK_grp/L_hind_main_IK
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl/Toe_and_Heel/Toe_swiivel_piv
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_hind_foot_ctrl/Toe_and_Heel/Toe_swiivel_piv/TOE_IK
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_side_ctrl
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_side_ctrl/L_hind_PV_world_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_side_ctrl/L_hind_PV_world_grp/L_hind1:ori_grp_PV
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_side_ctrl/L_hind_PV_world_grp/L_hind1:ori_grp_PV/L_hind_leg_PV
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_side_ctrl/L_Scap_tool_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/L_side_ctrl/L_Scap_tool_grp/L_transfer_data_elbow_IK_loc
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_fore_foot_ctrl
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_fore_foot_ctrl/Palm_Bend
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_fore_foot_ctrl/Palm_Bend/Toe_IK
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_fore_foot_ctrl/Palm_IK_Group
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_fore_foot_ctrl/Palm_IK_Group/palm_IK
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_fore_foot_ctrl/Palm_IK_Group/wrist_IK_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_fore_foot_ctrl/Palm_IK_Group/wrist_IK_grp/wrist_IK
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_forearm_PV
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl/Heel_ctrl_grp 1
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl/Heel_ctrl_grp 1/R_heel_ctrl
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl/Paw_PV_grp 1
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl/Paw_PV_grp 1/R_hind_Paw_rotate
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl/R_hind1:nurbsCircle1
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl/R_hind_enhanced_ik_JT
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl/R_hind_enhanced_ik_JT/enhanced_ik_JT_end
+          1
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl/Toe_and_heel
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl/Toe_and_heel/toe_pivot_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl/Toe_and_heel/toe_pivot_grp/ball_IK
+          1
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl/Toe_and_heel/toe_pivot_grp/R_enhanced_ORI_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl/Toe_and_heel/toe_pivot_grp/R_enhanced_ORI_grp/Rotate_IK_grp
+          1
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl/Toe_and_heel/toe_pivot_grp/R_enhanced_ORI_grp/Rotate_IK_grp
+          1/R_hind_Main_IK
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl/Toe_and_heel/Toe_swivel_piv
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_hind_foot_ctrl/Toe_and_heel/Toe_swivel_piv/TOE_IK
+          1
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_side_ctrl
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_side_ctrl/R_hind_PV_world_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_side_ctrl/R_hind_PV_world_grp/R_hind_ori_grp_PV
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_side_ctrl/R_hind_PV_world_grp/R_hind_ori_grp_PV/R_hind_leg_PV
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_side_ctrl/R_Scap_tool_grp
+        weight: 1
+      - path: Duskalo_Main_CTRL/R_side_ctrl/R_Scap_tool_grp/R_transfer_data_elbow_IK_loc
+        weight: 1
+      - path: Duskalo_Mesh
+        weight: 1
+      - path: Fox_Mesh
+        weight: 1
+      - path: Wolf_Mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 50
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: Root_Dusk_Joint
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
