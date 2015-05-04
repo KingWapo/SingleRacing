@@ -8,7 +8,7 @@ public class RaceManager : MonoBehaviour {
 
     public Text countdown;
     private static float timeToStart;
-    public static float maxTimeToStart = 4f;
+    public static float maxTimeToStart = 3f;
 
     private float timeToWeapons;
     private float maxTimeToWeapons = 5f;
@@ -51,9 +51,9 @@ public class RaceManager : MonoBehaviour {
     private void PreRace() {
         timeToStart -= Time.deltaTime;
 
-        countdown.text = (int)timeToStart + "";
+        countdown.text = ((int)timeToStart + 1) + "";
 
-        if (timeToStart < 1) {
+        if (timeToStart < 0) {
             state = State.Racing;
             countdown.gameObject.SetActive(false);
         }
