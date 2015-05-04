@@ -15,6 +15,7 @@ public abstract class Racer : MonoBehaviour {
     public static float maxReverseVelocity = -4f;
 
     protected float speedBoost = 0f;
+    protected float permanentBoost = 0f;
     public static float maxBoost = 30f;
     public static float boostDuration = 1f;
 
@@ -53,7 +54,7 @@ public abstract class Racer : MonoBehaviour {
         }
 
         if (speedBoost > 0) {
-            velocity = maxForwardVelocity + speedBoost;
+            velocity = maxForwardVelocity + speedBoost + permanentBoost;
             speedBoost -= (maxBoost / boostDuration) * Time.deltaTime;
         } else if (speedBoost < 0) {
             speedBoost = 0;
@@ -61,7 +62,7 @@ public abstract class Racer : MonoBehaviour {
 	}
 
     protected void UpdateMovement(float turnAxis, float acclAxis) {
-        if (Mathf.Abs(turnAxis) > .1f && Mathf.Abs(velocity + speedBoost) > .1f) {
+        if (Mathf.Abs(turnAxis) > .1f && Mathf.Abs(velocity + speedBoost + permanentBoost) > .1f) {
             lean = Mathf.Clamp(lean - Mathf.Sign(turnAxis), -maxLean, maxLean);
         } else {
             if (lean > 0f) {
@@ -71,7 +72,7 @@ public abstract class Racer : MonoBehaviour {
             }
         }
 
-        if (Mathf.Abs(velocity + speedBoost) > .1f) {
+        if (Mathf.Abs(velocity + speedBoost + permanentBoost) > .1f) {
             if (turnAxis != 0) {
                 transform.Rotate(0, turnAxis * Time.deltaTime * rotation * Mathf.Sign(velocity), 0);
             }
@@ -80,7 +81,7 @@ public abstract class Racer : MonoBehaviour {
         if (Mathf.Abs(acclAxis) > .1f) {
             velocity += .5f * acclAxis;
 
-            velocity = Mathf.Clamp(velocity, maxReverseVelocity, maxForwardVelocity + speedBoost);
+            velocity = Mathf.Clamp(velocity, maxReverseVelocity, maxForwardVelocity + speedBoost + permanentBoost);
         } else {
             velocity *= .9f;
             if (Mathf.Abs(velocity) <= .0001f) {
@@ -157,6 +158,11 @@ public abstract class Racer : MonoBehaviour {
 
     public void StartSpeedBoost() {
         speedBoost = maxBoost;
+    }
+
+    public void IncreasePermanentBoost()
+    {
+        permanentBoost += 5;
     }
 
     protected virtual void FinishRace() {
