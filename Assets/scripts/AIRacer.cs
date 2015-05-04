@@ -52,13 +52,14 @@ public class AIRacer : Racer {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Waypoint" && other.gameObject != previousWaypoint)
-        {
-            //if (Debugging) Debug.Log(gameObject.name + " Waypoint: " + other.gameObject.name);
-            waypointIndex = (waypointIndex + 1) % trackManager.waypoints.Length;
-            previousWaypoint = other.gameObject;
+        if (trackManager) {
+            if (other.tag == "Waypoint" && other.gameObject != previousWaypoint) {
+                if (Debugging) Debug.Log(gameObject.name + " Waypoint: " + other.gameObject.name);
+                waypointIndex = (waypointIndex + 1) % trackManager.waypoints.Length;
+                previousWaypoint = other.gameObject;
 
-            navAgent.SetDestination(trackManager.waypoints[waypointIndex].transform.position);
+                navAgent.SetDestination(trackManager.waypoints[waypointIndex].transform.position);
+            }
         }
     }
 
