@@ -12,7 +12,7 @@ public class TrackManager : MonoBehaviour {
     private GameManager manager;
 
     private bool[] shipChosen;
-    private string[] shipName = {"femur", "Drew", "Ate - Bitty", "QuadCopter"};
+    private string[] shipName = {"femur", "Drew", "Ate - Bitty", "QuadCopter", "Gnome"};
 
 	// Use this for initialization
 	void Start () {

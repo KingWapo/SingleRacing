@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
 	void Awake () {
         DontDestroyOnLoad(gameObject);
 
-        numRacers = 5;// aiShip.ships.Length + 1;
+        numRacers = 6;// aiShip.ships.Length + 1;
 
         queuedMaps = new List<string>();
 
