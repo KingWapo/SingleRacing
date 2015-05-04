@@ -15,6 +15,8 @@ public class AIRacer : Racer {
     private int waypointIndex = 0;
     private GameObject previousWaypoint;
 
+    public GameObject[] ships;
+
 	// Use this for initialization
 	protected override void Start () {
         base.Start();

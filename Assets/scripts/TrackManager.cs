@@ -9,7 +9,7 @@ public class TrackManager : MonoBehaviour {
     public GameObject playerCar;
     public GameObject aiCar;
 
-    private int numRacers = 6;
+    private int numRacers = 12;
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +26,10 @@ public class TrackManager : MonoBehaviour {
             if (playerPos == i) {
                 Instantiate(playerCar, startPos, startPoint.transform.rotation);
             } else {
-                Instantiate(aiCar, startPos, startPoint.transform.rotation);
+                AIRacer ai = ((GameObject) Instantiate(aiCar, startPos, startPoint.transform.rotation)).GetComponent<AIRacer>();
+                int shipIndex = Random.Range(0, ai.ships.Length);
+
+                ai.ships[shipIndex].SetActive(true);
             }
         }
 	}
