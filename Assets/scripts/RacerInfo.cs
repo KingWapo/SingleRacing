@@ -150,7 +150,7 @@ public class RacerInfo : MonoBehaviour {
             wayPointsHit++;
             previousWaypoint = other.gameObject;
 
-            if (wayPointsHit == 18) {
+            if (wayPointsHit == FindObjectOfType<TrackManager>().waypoints.Length * 3 + 1) {
                 racer.FinishRace();
             }
         }
