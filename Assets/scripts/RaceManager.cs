@@ -63,8 +63,12 @@ public class RaceManager : MonoBehaviour {
 
     private void UpdatePosition() {
         if (racers.Length > 0) {
-            for (int i = 0; i < racers.Length; i++) {
-                // logic for determining position
+            for (int i = 1; i < racers.Length; i++) {
+                if (racers[i - 1].GetComponent<RacerInfo>().GetScore() < 
+                    racers[i].GetComponent<RacerInfo>().GetScore())
+                {
+
+                }
             }
         }
     }

@@ -164,13 +164,9 @@ public abstract class Racer : MonoBehaviour {
     protected abstract void DoMovement();
     protected abstract float RacerVelocity();
 
-    void OnTriggerStay(Collider other) {
-        if (other.tag == "Racer") {
-            AIRacer otherRacer = other.GetComponent<AIRacer>();
-            if (otherRacer) {
-                otherRacer.Shoot();
-            }
-        }
+    public void Fire()
+    {
+        Shoot();
     }
 
     void OnCollisionEnter(Collision other) {

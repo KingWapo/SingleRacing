@@ -9,6 +9,7 @@ public class RacerInfo : MonoBehaviour {
 
     // racer position
     public int wayPointsHit = 0;
+    private GameObject previousWaypoint;
 
     // gun upgrades
     private int spreadLevel;
@@ -139,10 +140,18 @@ public class RacerInfo : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Waypoint") {
             wayPointsHit++;
+            previousWaypoint = other.gameObject;
         }
     }
 
     public int GetRacerInstanceID() {
         return GetInstanceID();
+    }
+
+    public float GetScore()
+    {
+        float score = wayPointsHit * 10;
+        score += Vector3.Distance(transform.position, previousWaypoint.transform.position);
+        return score;
     }
 }
