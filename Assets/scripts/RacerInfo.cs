@@ -150,8 +150,15 @@ public class RacerInfo : MonoBehaviour {
 
     public float GetScore()
     {
-        float score = wayPointsHit * 10;
-        score += Vector3.Distance(transform.position, previousWaypoint.transform.position);
-        return score;
+        if (previousWaypoint)
+        {
+            float score = wayPointsHit * 100;
+            score += Vector3.Distance(transform.position, previousWaypoint.transform.position);
+            return score;
+        }
+        else
+        {
+            return 0;
+        }
     }
 }

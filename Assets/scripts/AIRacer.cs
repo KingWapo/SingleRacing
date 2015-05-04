@@ -54,7 +54,7 @@ public class AIRacer : Racer {
     {
         if (other.tag == "Waypoint" && other.gameObject != previousWaypoint)
         {
-            if (Debugging) Debug.Log(gameObject.name + " Waypoint: " + other.gameObject.name);
+            //if (Debugging) Debug.Log(gameObject.name + " Waypoint: " + other.gameObject.name);
             waypointIndex = (waypointIndex + 1) % trackManager.waypoints.Length;
             previousWaypoint = other.gameObject;
 

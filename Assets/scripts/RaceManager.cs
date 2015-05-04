@@ -62,14 +62,20 @@ public class RaceManager : MonoBehaviour {
     }
 
     private void UpdatePosition() {
+        string placement = "";
         if (racers.Length > 0) {
-            for (int i = 1; i < racers.Length; i++) {
-                if (racers[i - 1].GetComponent<RacerInfo>().GetScore() < 
-                    racers[i].GetComponent<RacerInfo>().GetScore())
+            for (int i = 0; i < racers.Length - 1; i++) {
+                if (racers[i].GetComponent<RacerInfo>().GetScore() < 
+                    racers[i + 1].GetComponent<RacerInfo>().GetScore())
                 {
-
+                    GameObject temp = racers[i];
+                    racers[i] = racers[i + 1];
+                    racers[i + 1] = temp;
                 }
+                placement += (i + 1) + ": " + racers[i].gameObject.name + "\n";
             }
+            placement += (racers.Length) + ": " + racers[racers.Length - 1].gameObject.name;
+            Debug.Log(placement);
         }
     }
 }
