@@ -32,6 +32,12 @@ public class PlayerRacer : Racer {
         }
 
         UpdateHealthBar();
+
+        if (RaceManager.GetState() == RaceManager.State.PreRace) {
+            float lessTime = 2f;
+            float negRatio = ((RaceManager.GetTimeToStart() - 2f) / (RaceManager.maxTimeToStart - 2f));
+            camera.transform.localPosition = Vector3.Lerp(new Vector3(0, 12f, -36f), new Vector3(0, 1f, -3f), 1f - negRatio);
+        }
 	}
 
     protected override void DoMovement() {

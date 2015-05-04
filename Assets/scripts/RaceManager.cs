@@ -7,7 +7,8 @@ public class RaceManager : MonoBehaviour {
     private GameObject[] racers;
 
     public Text countdown;
-    private float timeToStart = 4f;
+    private static float timeToStart;
+    public static float maxTimeToStart = 4f;
 
     private float timeToWeapons;
     private float maxTimeToWeapons = 5f;
@@ -23,6 +24,8 @@ public class RaceManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         state = State.PreRace;
+
+        timeToStart = maxTimeToStart;
 
         racers = GameObject.FindGameObjectsWithTag("Racer");
         UpdatePosition();
@@ -77,6 +80,10 @@ public class RaceManager : MonoBehaviour {
 
     public static State GetState() {
         return state;
+    }
+
+    public static float GetTimeToStart() {
+        return timeToStart;
     }
 
     public void ResetTimeToWeapons() {
