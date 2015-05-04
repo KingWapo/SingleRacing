@@ -3,6 +3,9 @@ using System.Collections;
 
 public class RacerInfo : MonoBehaviour {
 
+    // name
+    public string racerName;
+
     // renderers
     private MeshRenderer[] renderers;
     private bool rendering = true;
@@ -146,6 +149,10 @@ public class RacerInfo : MonoBehaviour {
         if (other.tag == "Waypoint" && other.gameObject != previousWaypoint) {
             wayPointsHit++;
             previousWaypoint = other.gameObject;
+
+            if (wayPointsHit == 18) {
+                racer.FinishRace();
+            }
         }
         if (other.tag == "Powerup")
         {

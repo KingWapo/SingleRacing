@@ -165,8 +165,33 @@ public abstract class Racer : MonoBehaviour {
         permanentBoost += 5;
     }
 
-    protected virtual void FinishRace() {
-        // do stuff
+    public virtual void FinishRace() {
+        int numFinished = RaceManager.raceListings.Count + 1;
+        RaceManager.raceListings.Add(racerInfo.racerName + ": " + GetPositionScore(numFinished));
+        FindObjectOfType<GameManager>().AddScore(racerIndex, GetPositionScore(numFinished));
+
+        if (RaceManager.raceListings.Count >= GameManager.numRacers) {
+            RaceManager.SetState(RaceManager.State.PostRace);
+        }
+    }
+
+    private int GetPositionScore(int numFinished) {
+        switch (numFinished) {
+            case 1:
+                return 10;
+            case 2:
+                return 8;
+            case 3:
+                return 6;
+            case 4:
+                return 4;
+            case 5:
+                return 2;
+            case 6:
+                return 1;
+            default:
+                return 0;
+        }
     }
 
     protected abstract void DoMovement();

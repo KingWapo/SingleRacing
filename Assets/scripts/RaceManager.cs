@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class RaceManager : MonoBehaviour {
 
     private GameObject[] racers;
 
     public Text countdown;
+    public Text listing;
+
+    public static List<string> raceListings;
+
     private static float timeToStart;
     public static float maxTimeToStart = 3f;
 
@@ -29,6 +34,8 @@ public class RaceManager : MonoBehaviour {
 
         racers = GameObject.FindGameObjectsWithTag("Racer");
         UpdatePosition();
+
+        raceListings = new List<string>();
 
         ResetTimeToWeapons();
 	}
@@ -71,7 +78,16 @@ public class RaceManager : MonoBehaviour {
     }
 
     private void PostRace() {
+        if (!listing.gameObject.activeSelf) {
+            listing.gameObject.SetActive(true);
 
+            listing.text = "";
+
+            for (int i = 0; i < raceListings.Count; i++) {
+                listing.text += raceListings[i];
+                listing.text += "\n";
+            }
+        }
     }
 
     public static void SetState(State newState) {

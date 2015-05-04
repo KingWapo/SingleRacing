@@ -56,7 +56,7 @@ public class PlayerRacer : Racer {
         return velocity;
     }
 
-    protected override void FinishRace() {
+    public override void FinishRace() {
         base.FinishRace();
 
         gameObject.AddComponent<AIRacer>();
