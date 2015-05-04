@@ -38,7 +38,7 @@ public class PlayerRacer : Racer {
         float turnAxis = Input.GetAxis("Horizontal");
         float acclAxis = Input.GetAxis("Vertical");
 
-        turnAxis = Mathf.Abs(turnAxis) > .1f ? turnAxis : Input.GetAxis("360_LeftThumbstick");
+        turnAxis = Mathf.Abs(turnAxis) > .1f ? turnAxis * .5f : Input.GetAxis("360_LeftThumbstick");
         acclAxis = Mathf.Abs(acclAxis) > .1f ? acclAxis : Input.GetAxis("360_Triggers");
 
         UpdateMovement(turnAxis, acclAxis);
