@@ -39,7 +39,7 @@ public class AIRacer : Racer {
             navAgent.speed = 0;
         }
         else {
-            navAgent.speed = maxForwardVelocity + speedBoost;
+            navAgent.speed = maxForwardVelocity + speedBoost + permanentBoost;
         }
         
 	}
@@ -56,11 +56,14 @@ public class AIRacer : Racer {
     {
         if (trackManager) {
             if (other.tag == "Waypoint" && other.gameObject != previousWaypoint) {
-                if (Debugging) Debug.Log(gameObject.name + " Waypoint: " + other.gameObject.name);
                 waypointIndex = (waypointIndex + 1) % trackManager.waypoints.Length;
                 previousWaypoint = other.gameObject;
 
-                navAgent.SetDestination(trackManager.waypoints[waypointIndex].transform.position);
+                Transform trans = trackManager.waypoints[waypointIndex].transform;
+                Vector3 newPos = trackManager.waypoints[waypointIndex].transform.position;
+                newPos += trans.right * Random.Range(-5.0f, 5.0f);
+
+                navAgent.SetDestination(newPos);
             }
         }
     }

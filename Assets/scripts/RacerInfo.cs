@@ -20,6 +20,9 @@ public class RacerInfo : MonoBehaviour {
     public static int minFireRateLevel = 0;
     public static int maxFireRateLevel = 3;
 
+    // speed upgrades
+    private Racer racer;
+
     // racer health
     private float health;
     public static float maxHealth = 1f;
@@ -37,6 +40,8 @@ public class RacerInfo : MonoBehaviour {
 
         spreadLevel = minSpreadLevel;
         fireRateLevel = minFireRateLevel;
+
+        racer = GetComponent<Racer>();
 
         health = maxHealth;
 	}
@@ -141,6 +146,23 @@ public class RacerInfo : MonoBehaviour {
         if (other.tag == "Waypoint" && other.gameObject != previousWaypoint) {
             wayPointsHit++;
             previousWaypoint = other.gameObject;
+        }
+        if (other.tag == "Powerup")
+        {
+            PowerupType type = (PowerupType)Random.Range(0, (int)PowerupType.Max);
+            print(type);
+            switch(type)
+            {
+                case PowerupType.Spreadshot:
+                    IncreaseSpreadLevel();
+                    break;
+                case PowerupType.FireRate:
+                    IncreaseFireRateLevel();
+                    break;
+                case PowerupType.Speed:
+                    racer.IncreasePermanentBoost();
+                    break;
+            }
         }
     }
 

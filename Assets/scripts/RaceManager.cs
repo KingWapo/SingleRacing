@@ -106,7 +106,7 @@ public class RaceManager : MonoBehaviour {
                 placement += (i + 1) + ": " + racers[i].gameObject.name + " Score: " + racers[i].GetComponent<RacerInfo>().GetScore() + "\n";
             }
             placement += (racers.Length) + ": " + racers[racers.Length - 1].gameObject.name;
-            Debug.Log(placement);
+            //Debug.Log(placement);
         }
     }
 }
