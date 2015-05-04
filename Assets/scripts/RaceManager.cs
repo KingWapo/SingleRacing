@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class RaceManager : MonoBehaviour {
 
     private GameObject[] racers;
+
+    public Text countdown;
+    private float timeToStart = 4f;
 
     private float timeToWeapons;
     private float maxTimeToWeapons = 5f;
@@ -18,7 +22,7 @@ public class RaceManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        state = State.Racing;
+        state = State.PreRace;
 
         racers = GameObject.FindGameObjectsWithTag("Racer");
         UpdatePosition();
@@ -28,17 +32,44 @@ public class RaceManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (state == State.Racing) {
-            UpdatePosition();
-
-            if (timeToWeapons > 0) {
-                timeToWeapons -= Time.deltaTime;
-                //Debug.Log("DEBUG - TIME TO WEAPONS: " + timeToWeapons);
-            } else if (!weaponsEnabled) {
-                SetWeaponsActive(true);
-            }
+        switch (state) {
+            case State.PreRace:
+                PreRace();
+                break;
+            case State.Racing:
+                Racing();
+                break;
+            case State.PostRace:
+                PostRace();
+                break;
         }
 	}
+
+    private void PreRace() {
+        timeToStart -= Time.deltaTime;
+
+        countdown.text = (int)timeToStart + "";
+
+        if (timeToStart < 0) {
+            state = State.Racing;
+            countdown.gameObject.SetActive(false);
+        }
+    }
+
+    private void Racing() {
+        UpdatePosition();
+
+        if (timeToWeapons > 0) {
+            timeToWeapons -= Time.deltaTime;
+            //Debug.Log("DEBUG - TIME TO WEAPONS: " + timeToWeapons);
+        } else if (!weaponsEnabled) {
+            SetWeaponsActive(true);
+        }
+    }
+
+    private void PostRace() {
+
+    }
 
     public static void SetState(State newState) {
         state = newState;

@@ -34,7 +34,7 @@ public class AIRacer : Racer {
         base.Update();
 
         
-        if (!racerInfo.CanMove())
+        if (RaceManager.GetState() != RaceManager.State.Racing || !racerInfo.CanMove())
         {
             navAgent.speed = 0;
         }

@@ -78,7 +78,7 @@ public abstract class Racer : MonoBehaviour {
         }
 
         if (Mathf.Abs(acclAxis) > .1f) {
-            velocity += .5f * acclAxis;
+            velocity += 1.5f * acclAxis;
 
             velocity = Mathf.Clamp(velocity, maxReverseVelocity, maxForwardVelocity + speedBoost);
         } else {
