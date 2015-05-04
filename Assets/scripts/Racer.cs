@@ -45,7 +45,7 @@ public abstract class Racer : MonoBehaviour {
 	
 	// Update is called once per frame
 	protected virtual void Update () {
-        if (RaceManager.GetState() == RaceManager.State.Racing && racerInfo.CanMove()) {
+        if (RaceManager.GetState() != RaceManager.State.PreRace && racerInfo.CanMove()) {
             DoMovement();
         }
 
