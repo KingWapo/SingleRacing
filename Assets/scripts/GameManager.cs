@@ -4,12 +4,22 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
+    public AIRacer aiShip;
+    public static int numRacers;
+
     private List<string> queuedMaps;
 
+    private int[] racerScores;
+
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         DontDestroyOnLoad(gameObject);
+
+        numRacers = 4;// aiShip.ships.Length + 1;
+
         queuedMaps = new List<string>();
+
+        racerScores = new int[numRacers];
 	}
 	
 	// Update is called once per frame
@@ -29,5 +39,13 @@ public class GameManager : MonoBehaviour {
             Application.LoadLevel("Menu");
             Destroy(gameObject);
         }
+    }
+
+    public int[] GetScores() {
+        return racerScores;
+    }
+
+    public void AddScore(int index, int score) {
+        racerScores[index] += score;
     }
 }

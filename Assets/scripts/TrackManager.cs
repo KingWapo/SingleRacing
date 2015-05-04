@@ -9,13 +9,23 @@ public class TrackManager : MonoBehaviour {
     public GameObject playerCar;
     public GameObject aiCar;
 
-    private int numRacers = 12;
+    private GameManager manager;
+
+    private bool[] shipChosen;
 
 	// Use this for initialization
 	void Start () {
-        int playerPos = Random.Range(0, numRacers);
+        manager = FindObjectOfType<GameManager>();
 
-        for (int i = 0; i < numRacers; i++) {
+        if (!manager) {
+            gameObject.AddComponent<GameManager>();
+        }
+
+        int playerPos = Random.Range(0, GameManager.numRacers);
+
+        shipChosen = new bool[GameManager.numRacers - 1];
+
+        for (int i = 0; i < GameManager.numRacers; i++) {
             Vector3 offset = new Vector3();
 
             offset.z = 8 + (4 * (i / 2));
@@ -24,12 +34,21 @@ public class TrackManager : MonoBehaviour {
             Vector3 startPos = startPoint.transform.position + offset;
 
             if (playerPos == i) {
-                Instantiate(playerCar, startPos, startPoint.transform.rotation);
+                PlayerRacer pc = ((GameObject)Instantiate(playerCar, startPos, startPoint.transform.rotation)).GetComponent<PlayerRacer>();
+
+                pc.racerIndex = 0;
             } else {
                 AIRacer ai = ((GameObject) Instantiate(aiCar, startPos, startPoint.transform.rotation)).GetComponent<AIRacer>();
-                int shipIndex = Random.Range(0, ai.ships.Length);
+
+                int shipIndex;
+
+                do {
+                    shipIndex = Random.Range(0, ai.ships.Length);
+                } while (shipChosen[shipIndex]);
 
                 ai.ships[shipIndex].SetActive(true);
+                shipChosen[shipIndex] = true;
+                ai.racerIndex = shipIndex + 1;
             }
         }
 	}

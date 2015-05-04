@@ -18,6 +18,8 @@ public abstract class Racer : MonoBehaviour {
     public static float maxBoost = 30f;
     public static float boostDuration = 1f;
 
+    public int racerIndex;
+
     // racer shooting
     public GameObject projectile;
     public GameObject leftGun;
