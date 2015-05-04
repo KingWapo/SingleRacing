@@ -50,7 +50,7 @@ public class RaceManager : MonoBehaviour {
 
         countdown.text = (int)timeToStart + "";
 
-        if (timeToStart < 0) {
+        if (timeToStart < 1) {
             state = State.Racing;
             countdown.gameObject.SetActive(false);
         }
