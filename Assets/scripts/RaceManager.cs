@@ -72,7 +72,7 @@ public class RaceManager : MonoBehaviour {
                     racers[i] = racers[i + 1];
                     racers[i + 1] = temp;
                 }
-                placement += (i + 1) + ": " + racers[i].gameObject.name + "\n";
+                placement += (i + 1) + ": " + racers[i].gameObject.name + " Score: " + racers[i].GetComponent<RacerInfo>().GetScore() + "\n";
             }
             placement += (racers.Length) + ": " + racers[racers.Length - 1].gameObject.name;
             Debug.Log(placement);

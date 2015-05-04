@@ -138,7 +138,7 @@ public class RacerInfo : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
-        if (other.tag == "Waypoint") {
+        if (other.tag == "Waypoint" && other.gameObject != previousWaypoint) {
             wayPointsHit++;
             previousWaypoint = other.gameObject;
         }
