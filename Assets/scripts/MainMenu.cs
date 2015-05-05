@@ -3,7 +3,10 @@ using System.Collections;
 
 public class MainMenu : MonoBehaviour {
 
+    public GameObject mainPanel;
     public GameObject lobbyPanel;
+    public GameObject characterPanel;
+    public GameObject characters;
     public GameObject controlPanel;
     public GameObject creditPanel;
 
@@ -21,6 +24,15 @@ public class MainMenu : MonoBehaviour {
 
     public void StartGame() {
         lobbyPanel.SetActive(true);
+        controlPanel.SetActive(false);
+        creditPanel.SetActive(false);
+    }
+
+    public void CharacterSelect() {
+        mainPanel.SetActive(false);
+        lobbyPanel.SetActive(false);
+        characterPanel.SetActive(true);
+        characters.SetActive(true);
         controlPanel.SetActive(false);
         creditPanel.SetActive(false);
     }

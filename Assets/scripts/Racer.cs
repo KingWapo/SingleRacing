@@ -44,6 +44,12 @@ public abstract class Racer : MonoBehaviour {
     protected virtual void Start() {
         racerInfo = GetComponent<RacerInfo>();
         firing = rightGun.GetComponent<AudioSource>();
+
+        if (racerInfo.isTree)
+        {
+            rightGun.SetActive(false);
+            leftGun.SetActive(false);
+        }
 	}
 	
 	// Update is called once per frame
@@ -61,7 +67,7 @@ public abstract class Racer : MonoBehaviour {
             speedBoost -= (maxBoost / boostDuration) * Time.deltaTime;
         } else if (speedBoost < 0) {
             speedBoost = 0;
-        }
+        }    
 	}
 
     protected void UpdateMovement(float turnAxis, float acclAxis) {
@@ -85,6 +91,11 @@ public abstract class Racer : MonoBehaviour {
             velocity += 1.5f * acclAxis;
 
             velocity = Mathf.Clamp(velocity, maxReverseVelocity, maxForwardVelocity + speedBoost + permanentBoost);
+
+            if (racerInfo.isTree)
+            {
+                velocity = 0;
+            }
         } else {
             velocity *= .9f;
             if (Mathf.Abs(velocity) <= .0001f) {
@@ -101,7 +112,7 @@ public abstract class Racer : MonoBehaviour {
     }
 
     protected void Shoot() {
-        if (weaponsEnabled && cooldown <= 0 && racerInfo.CanMove()) {
+        if (weaponsEnabled && cooldown <= 0 && racerInfo.CanMove() && !racerInfo.isTree) {
             Vector3 origin;
 
             if (barrelIndex == 0) {
@@ -171,6 +182,9 @@ public abstract class Racer : MonoBehaviour {
 
     public virtual void FinishRace() {
         int numFinished = RaceManager.raceListings.Count + 1;
+
+        racerInfo.isFinished = true;
+
         RaceManager.raceListings.Add(racerInfo.racerName + ": " + GetPositionScore(numFinished));
         FindObjectOfType<GameManager>().AddScore(racerIndex, GetPositionScore(numFinished));
 

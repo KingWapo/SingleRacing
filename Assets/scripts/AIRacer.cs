@@ -33,8 +33,11 @@ public class AIRacer : Racer {
 	protected override void Update () {
         base.Update();
 
-        
-        if (RaceManager.GetState() == RaceManager.State.PreRace || !racerInfo.CanMove())
+        if (racerInfo.isTree)
+        {
+            navAgent.speed = 0;
+        }
+        else if (RaceManager.GetState() == RaceManager.State.PreRace || !racerInfo.CanMove())
         {
             navAgent.speed = 0;
         }
@@ -69,7 +72,7 @@ public class AIRacer : Racer {
     }
 
     protected override void DoMovement() {
-        //Debug.Log("Brandon Sux");
+        
     }
 
     protected override float RacerVelocity() {

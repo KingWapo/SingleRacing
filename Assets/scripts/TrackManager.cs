@@ -12,7 +12,7 @@ public class TrackManager : MonoBehaviour {
     private GameManager manager;
 
     private bool[] shipChosen;
-    private string[] shipName = {"femur", "Drew", "Ate - Bitty", "QuadCopter", "Gnome", "Duskalo"};
+    private string[] shipName = {"femur", "Drew", "Ate - Bitty", "QuadCopter", "Gnome", "Duskalo", "Tree"};
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +24,9 @@ public class TrackManager : MonoBehaviour {
 
         int playerPos = Random.Range(0, GameManager.numRacers);
 
-        shipChosen = new bool[GameManager.numRacers - 1];
+        shipChosen = new bool[GameManager.numRacers];
+        if (manager.playerIndex == -1) manager.playerIndex = 0;
+        shipChosen[manager.playerIndex] = true;
 
         for (int i = 0; i < GameManager.numRacers; i++) {
             Vector3 offset = new Vector3();
@@ -36,11 +38,18 @@ public class TrackManager : MonoBehaviour {
 
             if (playerPos == i) {
                 GameObject pc = (GameObject)Instantiate(playerCar, startPos, startPoint.transform.rotation);
+                pc.transform.GetChild(manager.playerIndex).gameObject.SetActive(true);
+
                 PlayerRacer pRacer = pc.GetComponent<PlayerRacer>();
                 RacerInfo pInfo = pc.GetComponent<RacerInfo>();
 
-                pRacer.racerIndex = 0;
-                pInfo.racerName = "Player";
+                if (manager.playerIndex == 6)
+                {
+                    pInfo.isTree = true;
+                }
+
+                pRacer.racerIndex = manager.playerIndex;
+                pInfo.racerName = "THIS IS YOU";//shipName[manager.playerIndex];
             } else {
                 GameObject ai = (GameObject) Instantiate(aiCar, startPos, startPoint.transform.rotation);
 
@@ -54,6 +63,12 @@ public class TrackManager : MonoBehaviour {
                 } while (shipChosen[shipIndex]);
 
                 aRacer.ships[shipIndex].SetActive(true);
+
+                if (shipIndex == aRacer.ships.Length - 1)
+                {
+                    aInfo.isTree = true;
+                }
+
                 aInfo.racerName = shipName[shipIndex];
                 shipChosen[shipIndex] = true;
                 aRacer.racerIndex = shipIndex + 1;

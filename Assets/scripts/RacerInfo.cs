@@ -44,6 +44,10 @@ public class RacerInfo : MonoBehaviour {
 
     private bool canMove = true;
 
+    public bool isTree = false;
+
+    public bool isFinished = false;
+
 	// Use this for initialization
     void Start() {
         renderers = GetComponentsInChildren<MeshRenderer>();

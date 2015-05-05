@@ -56,6 +56,12 @@ public class RaceManager : MonoBehaviour {
                 PostRace();
                 break;
         }
+
+        if (racers[racers.Length - 2].GetComponent<RacerInfo>().isFinished &&
+            !racers[racers.Length - 1].GetComponent<RacerInfo>().isFinished)
+        {
+            racers[racers.Length - 1].GetComponent<Racer>().FinishRace();
+        }
 	}
 
     private void PreRace() {
@@ -94,7 +100,7 @@ public class RaceManager : MonoBehaviour {
             playerListings.text += "\n";
         }
 
-        if (raceListings.Count == GameManager.numRacers) {
+        if (raceListings.Count >= GameManager.numRacers) {
             playerListings.text += "\nALL PLAYERS FINISHED";
         } else {
             playerListings.text += "\nWAIT FOR OTHERS\nOR CONTINUE";

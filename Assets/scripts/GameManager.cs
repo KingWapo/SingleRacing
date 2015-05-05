@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour {
     public AIRacer aiShip;
     public static int numRacers;
 
+    // Which racer is the player.
+    public int playerIndex;
+
     private List<string> queuedMaps;
 
     private int[] racerScores;
@@ -20,6 +23,8 @@ public class GameManager : MonoBehaviour {
         queuedMaps = new List<string>();
 
         racerScores = new int[numRacers];
+
+        playerIndex = -1;
 	}
 	
 	// Update is called once per frame
