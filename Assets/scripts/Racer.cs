@@ -26,6 +26,8 @@ public abstract class Racer : MonoBehaviour {
     public GameObject leftGun;
     public GameObject rightGun;
 
+    private AudioSource firing;
+
     private int barrelIndex = 0;
 
     private float spreadAngle = 1f;
@@ -41,6 +43,7 @@ public abstract class Racer : MonoBehaviour {
 	// Use this for initialization
     protected virtual void Start() {
         racerInfo = GetComponent<RacerInfo>();
+        firing = rightGun.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -143,6 +146,7 @@ public abstract class Racer : MonoBehaviour {
 
             cooldown = maxCooldown - ((maxCooldown / (RacerInfo.maxFireRateLevel * 2)) * racerInfo.GetFireRateLevel());
             barrelIndex = (barrelIndex + 1) % 2;
+            firing.Play();
         }
     }
 

@@ -14,6 +14,10 @@ public class RacerInfo : MonoBehaviour {
     public int wayPointsHit = 0;
     private GameObject previousWaypoint;
 
+    private PowerupText powerText;
+
+    public AudioSource pickupSound;
+
     // gun upgrades
     private int spreadLevel;
     public static int minSpreadLevel = 1;
@@ -40,6 +44,8 @@ public class RacerInfo : MonoBehaviour {
 	// Use this for initialization
     void Start() {
         renderers = GetComponentsInChildren<MeshRenderer>();
+
+        powerText = GameObject.FindGameObjectWithTag("PowerupText").GetComponent<PowerupText>();
 
         spreadLevel = minSpreadLevel;
         fireRateLevel = minFireRateLevel;
@@ -156,18 +162,21 @@ public class RacerInfo : MonoBehaviour {
         }
         if (other.tag == "Powerup")
         {
+            pickupSound.Play();
             PowerupType type = (PowerupType)Random.Range(0, (int)PowerupType.Max);
-            print(type);
             switch(type)
             {
                 case PowerupType.Spreadshot:
                     IncreaseSpreadLevel();
+                    if (GetComponent<PlayerRacer>()) powerText.Show("Improved Spread Shot");
                     break;
                 case PowerupType.FireRate:
                     IncreaseFireRateLevel();
+                    if (GetComponent<PlayerRacer>()) powerText.Show("Improved Fire Rate");
                     break;
                 case PowerupType.Speed:
                     racer.IncreasePermanentBoost();
+                    if (GetComponent<PlayerRacer>()) powerText.Show("Improved Speed");
                     break;
             }
         }
