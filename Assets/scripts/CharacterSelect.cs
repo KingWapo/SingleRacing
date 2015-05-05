@@ -21,6 +21,6 @@ public class CharacterSelect : MonoBehaviour {
     void OnMouseDown()
     {
         manager.playerIndex = CharacterIndex;
-        menu.TopHat();
+        menu.StartGame();
     }
 }

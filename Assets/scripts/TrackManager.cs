@@ -48,8 +48,8 @@ public class TrackManager : MonoBehaviour {
                     pInfo.isTree = true;
                 }
 
-                pRacer.racerIndex = manager.playerIndex;
-                pInfo.racerName = ">>THIS IS YOU<<";
+                pRacer.racerIndex = 0;// manager.playerIndex;
+                pInfo.racerName = "THIS IS YOU";
             } else {
                 GameObject ai = (GameObject) Instantiate(aiCar, startPos, startPoint.transform.rotation);
 
@@ -64,14 +64,15 @@ public class TrackManager : MonoBehaviour {
 
                 aRacer.ships[shipIndex].SetActive(true);
 
-                if (shipIndex == aRacer.ships.Length - 1)
-                {
-                    aInfo.isTree = true;
-                }
-
                 aInfo.racerName = shipName[shipIndex];
                 shipChosen[shipIndex] = true;
                 aRacer.racerIndex = shipIndex + 1;
+
+                if (shipIndex == aRacer.ships.Length - 1)
+                {
+                    aInfo.isTree = true;
+                    aRacer.racerIndex = manager.playerIndex + 1;
+                }
             }
         }
 	}

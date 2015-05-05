@@ -24,6 +24,8 @@ public class MainMenu : MonoBehaviour {
 
     public void StartGame() {
         lobbyPanel.SetActive(true);
+        characterPanel.SetActive(false);
+        characters.SetActive(false);
         controlPanel.SetActive(false);
         creditPanel.SetActive(false);
     }
