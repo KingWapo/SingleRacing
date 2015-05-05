@@ -49,7 +49,7 @@ public class TrackManager : MonoBehaviour {
                 }
 
                 pRacer.racerIndex = manager.playerIndex;
-                pInfo.racerName = "THIS IS YOU";//shipName[manager.playerIndex];
+                pInfo.racerName = ">>THIS IS YOU<<";
             } else {
                 GameObject ai = (GameObject) Instantiate(aiCar, startPos, startPoint.transform.rotation);
 

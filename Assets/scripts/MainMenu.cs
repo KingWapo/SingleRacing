@@ -58,8 +58,8 @@ public class MainMenu : MonoBehaviour {
         Play();
     }
 
-    public void TheTwins() {
-        //manager.QueueMap("Figure-8");
+    public void taHpoT() {
+        manager.QueueMap("T-Track Mirror");
         Play();
     }
 
@@ -70,12 +70,13 @@ public class MainMenu : MonoBehaviour {
 
     public void Tournament() {
         manager.QueueMap("T-Track");
-        //manager.QueueMap("Figure-8");
+        manager.QueueMap("T-Track Mirror");
         //manager.QueueMap("Standard");
         Play();
     }
 
     private void Play() {
+        manager.QueueMap("FinalScores");
         manager.NextLevel();
     }
 }

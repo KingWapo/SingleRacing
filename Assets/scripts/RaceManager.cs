@@ -102,8 +102,10 @@ public class RaceManager : MonoBehaviour {
 
         if (raceListings.Count >= GameManager.numRacers) {
             playerListings.text += "\nALL PLAYERS FINISHED";
+            continueButton.gameObject.SetActive(true);
         } else {
-            playerListings.text += "\nWAIT FOR OTHERS\nOR CONTINUE";
+            playerListings.text += "\nWAIT FOR OTHERS";
+            continueButton.gameObject.SetActive(false);
         }
     }
 

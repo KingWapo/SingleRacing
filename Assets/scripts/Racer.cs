@@ -187,6 +187,7 @@ public abstract class Racer : MonoBehaviour {
 
         RaceManager.raceListings.Add(racerInfo.racerName + ": " + GetPositionScore(numFinished));
         FindObjectOfType<GameManager>().AddScore(racerIndex, GetPositionScore(numFinished));
+        FindObjectOfType<GameManager>().SetName(racerIndex, racerInfo.racerName);
 
         if (RaceManager.raceListings.Count >= GameManager.numRacers) {
             RaceManager.SetState(RaceManager.State.PostRace);
