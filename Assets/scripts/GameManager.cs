@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 
     private List<string> queuedMaps;
 
+    private string[] racerNames;
     private int[] racerScores;
 
 	// Use this for initialization
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour {
         queuedMaps = new List<string>();
 
         racerScores = new int[numRacers];
+        racerNames = new string[numRacers];
 	}
 	
 	// Update is called once per frame
@@ -47,5 +49,13 @@ public class GameManager : MonoBehaviour {
 
     public void AddScore(int index, int score) {
         racerScores[index] += score;
+    }
+
+    public string[] GetNames() {
+        return racerNames;
+    }
+
+    public void SetName(int index, string name) {
+        racerNames[index] = name;
     }
 }

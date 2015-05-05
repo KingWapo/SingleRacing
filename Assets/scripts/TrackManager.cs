@@ -40,7 +40,7 @@ public class TrackManager : MonoBehaviour {
                 RacerInfo pInfo = pc.GetComponent<RacerInfo>();
 
                 pRacer.racerIndex = 0;
-                pInfo.racerName = "Player";
+                pInfo.racerName = ">>THIS IS YOU<<";
             } else {
                 GameObject ai = (GameObject) Instantiate(aiCar, startPos, startPoint.transform.rotation);
 
