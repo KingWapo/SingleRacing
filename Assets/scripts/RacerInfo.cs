@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class RacerInfo : MonoBehaviour {
@@ -13,6 +14,8 @@ public class RacerInfo : MonoBehaviour {
     // racer position
     public int wayPointsHit = 0;
     private GameObject previousWaypoint;
+
+    private Text lapText;
 
     private PowerupText powerText;
 
@@ -46,6 +49,7 @@ public class RacerInfo : MonoBehaviour {
         renderers = GetComponentsInChildren<MeshRenderer>();
 
         powerText = GameObject.FindGameObjectWithTag("PowerupText").GetComponent<PowerupText>();
+        lapText = GameObject.FindGameObjectWithTag("LapText").GetComponent<Text>();
 
         spreadLevel = minSpreadLevel;
         fireRateLevel = minFireRateLevel;
@@ -156,13 +160,21 @@ public class RacerInfo : MonoBehaviour {
             wayPointsHit++;
             previousWaypoint = other.gameObject;
 
-            if (wayPointsHit == FindObjectOfType<TrackManager>().waypoints.Length * 3 + 1) {
+            TrackManager trackManager = FindObjectOfType<TrackManager>();
+
+            int lap = wayPointsHit / trackManager.waypoints.Length + 1;
+
+            print(lap);
+
+            lapText.text = "Lap " + lap + " / 5";
+
+            if (wayPointsHit == trackManager.waypoints.Length * 5 + 1) {
                 racer.FinishRace();
             }
         }
         if (other.tag == "Powerup")
         {
-            pickupSound.Play();
+            if (GetComponent<PlayerRacer>()) pickupSound.Play();
             PowerupType type = (PowerupType)Random.Range(0, (int)PowerupType.Max);
             switch(type)
             {
