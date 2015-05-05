@@ -8,7 +8,8 @@ public class RaceManager : MonoBehaviour {
     private GameObject[] racers;
 
     public Text countdown;
-    public Text listing;
+    public GameObject listing;
+    public Button continueButton;
 
     public static List<string> raceListings;
 
@@ -38,6 +39,8 @@ public class RaceManager : MonoBehaviour {
         raceListings = new List<string>();
 
         ResetTimeToWeapons();
+
+        continueButton.onClick.AddListener(() => { FindObjectOfType<GameManager>().NextLevel(); });
 	}
 	
 	// Update is called once per frame
@@ -80,13 +83,21 @@ public class RaceManager : MonoBehaviour {
     private void PostRace() {
         if (!listing.gameObject.activeSelf) {
             listing.gameObject.SetActive(true);
+        }
 
-            listing.text = "";
+        Text playerListings = listing.GetComponentInChildren<Text>();
 
-            for (int i = 0; i < raceListings.Count; i++) {
-                listing.text += raceListings[i];
-                listing.text += "\n";
-            }
+        playerListings.text = "";
+
+        for (int i = 0; i < raceListings.Count; i++) {
+            playerListings.text += raceListings[i];
+            playerListings.text += "\n";
+        }
+
+        if (raceListings.Count == GameManager.numRacers) {
+            playerListings.text += "\nALL PLAYERS FINISHED";
+        } else {
+            playerListings.text += "\nWAIT FOR OTHERS\nOR CONTINUE";
         }
     }
 

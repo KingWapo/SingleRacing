@@ -59,6 +59,7 @@ public class PlayerRacer : Racer {
     public override void FinishRace() {
         base.FinishRace();
 
+        RaceManager.SetState(RaceManager.State.PostRace);
         gameObject.AddComponent<AIRacer>();
         enabled = false;
     }
